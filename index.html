@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html class="h-full scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
     <title>Calma : BreathCoach</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="playstore-app-icon-vibrant-curved.png" />
     <link rel="apple-touch-icon" href="playstore-app-icon-vibrant-curved.png" />
+
+    <!-- Performance & Preload Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="playstore-app-icon-vibrant-curved.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="Phone-Screenshots/box-breathing-sounds.webp" type="image/webp" fetchpriority="high" />
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep. 25+ sessions, custom pacing, immersive visuals and sound." />
@@ -18,22 +24,25 @@
     <meta property="og:description" content="Guided breathing exercises to calm anxiety, improve focus, and help you sleep." />
     <meta property="og:image" content="playstore-app-icon-vibrant-curved.png" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <!-- Fonts with font-display: swap -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
 
     <style>
         @layer base {
-            html,
-            body {
+            html {
                 margin: 0;
                 padding: 0;
+                width: 100%;
+                overflow-x: clip;
             }
 
             body {
-                overscroll-behavior: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                min-height: 100vh;
+                overflow-x: clip;
             }
 
             main > :first-child {
@@ -71,12 +80,46 @@
             display: flex;
             width: max-content;
             animation: marquee-left 40s linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
         }
 
         .marquee-track-right {
             display: flex;
             width: max-content;
             animation: marquee-right 44s linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .marquee-track-ipad {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 55s linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .marquee-track-phone {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 55s linear infinite;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Mobile touch and scrolling optimization */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (hover: hover) {
+            .marquee-track-left:hover,
+            .marquee-track-right:hover,
+            .marquee-track-ipad:hover,
+            .marquee-track-phone:hover {
+                animation-play-state: paused;
+            }
         }
     </style>
 
@@ -88,39 +131,39 @@
                 extend: {
                     colors: {
                         "on-primary-fixed-variant": "#004c6e",
-                        "primary-fixed": "#c9e6ff",
-                        "surface-container-highest": "#cce4f7",
-                        "tertiary-fixed-dim": "#4cd7f6",
-                        "background": "#f0f7fd",
-                        "inverse-surface": "#213145",
-                        "tertiary": "#00687a",
-                        "surface-variant": "#d4e8f9",
-                        "secondary-fixed-dim": "#7bd0ff",
-                        "surface-tint": "#006591",
+                        "primary-fixed": "#bae6fd",
+                        "surface-container-highest": "#bae6fd",
+                        "tertiary-fixed-dim": "#38bdf8",
+                        "background": "#e0f2fe",
+                        "inverse-surface": "#1e293b",
+                        "tertiary": "#0284c7",
+                        "surface-variant": "#cbeafe",
+                        "secondary-fixed-dim": "#7dd3fc",
+                        "surface-tint": "#0284c7",
                         "on-error": "#ffffff",
-                        "on-secondary-container": "#004d6a",
-                        "on-background": "#0b1c30",
-                        "surface-dim": "#c2dcf3",
+                        "on-secondary-container": "#0369a1",
+                        "on-background": "#0c2840",
+                        "surface-dim": "#b9e3fc",
                         "on-primary": "#ffffff",
                         "error-container": "#ffdad6",
-                        "surface": "#f0f7fd",
+                        "surface": "#e0f2fe",
                         "error": "#ba1a1a",
-                        "outline": "#6e7881",
-                        "on-primary-container": "#003751",
-                        "surface-container-low": "#e4f1fc",
-                        "outline-variant": "#b8d2ea",
-                        "on-primary-fixed": "#001e2f",
-                        "surface-container-high": "#d6eaf8",
-                        "surface-container": "#dcedfa",
-                        "secondary-container": "#40c2fd",
-                        "on-surface-variant": "#3e4850",
-                        "primary-container": "#0ea5e9",
-                        "on-tertiary-fixed": "#001f26",
-                        "primary": "#006591",
+                        "outline": "#64748b",
+                        "on-primary-container": "#0369a1",
+                        "surface-container-low": "#d4edfd",
+                        "outline-variant": "#93c5fd",
+                        "on-primary-fixed": "#082f49",
+                        "surface-container-high": "#c3e4fc",
+                        "surface-container": "#cbe8fd",
+                        "secondary-container": "#38bdf8",
+                        "on-surface-variant": "#334155",
+                        "primary-container": "#0284c7",
+                        "on-tertiary-fixed": "#082f49",
+                        "primary": "#0284c7",
                         "on-secondary": "#ffffff",
-                        "secondary-fixed": "#c4e7ff",
-                        "on-secondary-fixed": "#001e2c",
-                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#bae6fd",
+                        "on-secondary-fixed": "#082f49",
+                        "surface-container-lowest": "#f0f9ff",
                         "on-tertiary-container": "#003943",
                         "primary-fixed-dim": "#89ceff",
                         "on-secondary-fixed-variant": "#004c69",
@@ -188,15 +231,15 @@
     </script>
 </head>
 
-<body class="min-h-screen bg-background font-body-md text-on-surface flex flex-col antialiased selection:bg-sky-100 selection:text-sky-900">
+<body class="min-h-screen bg-background font-body-md text-on-surface flex flex-col antialiased selection:bg-sky-100 selection:text-sky-900 overflow-x-clip w-full">
 
     <!-- Floating Pill Header -->
-    <header class="fixed top-4 sm:top-5 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none">
-        <div class="max-w-[72rem] mx-auto flex items-center justify-between px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-surface/85 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
+    <header class="fixed top-3 sm:top-5 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none w-full max-w-full">
+        <div class="w-full max-w-[72rem] mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-surface/90 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
             <!-- Logo -->
-            <a class="flex items-center gap-2.5 group flex-shrink-0" href="#">
-                <img alt="Calma: Breathcoach Logo" class="w-8 h-8 rounded-full object-cover shadow-xs border border-surface-container-high/80 flex-shrink-0" src="playstore-app-icon-vibrant-curved.png" />
-                <span class="font-headline-sm text-[15px] sm:text-[16px] tracking-tight text-on-surface group-hover:text-primary transition-colors font-semibold">
+            <a class="flex items-center gap-2 sm:gap-3.5 group flex-shrink-0 min-w-0" href="#">
+                <img alt="Calma: Breathcoach Logo" width="48" height="48" class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover shadow-sm border border-surface-container-high/90 flex-shrink-0 transition-transform group-hover:scale-105" src="playstore-app-icon-vibrant-curved.png" />
+                <span class="font-headline-sm text-[15px] sm:text-[18px] tracking-tight text-on-surface group-hover:text-primary transition-colors font-bold truncate">
                     <span class="sm:hidden">Calma</span>
                     <span class="hidden sm:inline">Calma : BreathCoach</span>
                 </span>
@@ -204,24 +247,33 @@
 
             <!-- Center Navigation Links (How It Works, App Gallery, Reviews) -->
             <nav class="hidden md:flex items-center gap-6 lg:gap-8 mx-auto">
-                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#how-it-works">How It Works</a>
-                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#gallery">App Gallery</a>
-                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#reviews">Reviews</a>
+                <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#how-it-works">How It Works</a>
+                <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#gallery">App Gallery</a>
+                <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#reviews">Reviews</a>
             </nav>
 
-            <!-- Right App Store & Google Play Badges -->
+            <!-- Right App Actions: Mobile CTA & Desktop App Store/Google Play Badges -->
             <div class="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-                <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
-                    <img alt="Download on the App Store" class="h-7 sm:h-8 w-auto" src="app-store-badge.svg" />
+                <!-- Mobile Compact CTA Button -->
+                <a class="sm:hidden inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-white text-[12px] font-semibold tracking-wide shadow-sm hover:bg-sky-600 active:scale-95 transition-all gap-1 flex-shrink-0" href="#download">
+                    <span>Get App</span>
+                    <span class="material-symbols-outlined text-[15px]">arrow_downward</span>
                 </a>
-                <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
-                    <img alt="Get it on Google Play" class="h-7 sm:h-8 w-auto" src="google-play-badge.svg" />
-                </a>
+
+                <!-- Desktop Store Badges -->
+                <div class="hidden sm:flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+                    <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
+                        <img alt="Download on the App Store" width="105" height="32" class="h-8 sm:h-9 w-auto" src="app-store-badge.svg" />
+                    </a>
+                    <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
+                        <img alt="Get it on Google Play" width="105" height="32" class="h-8 sm:h-9 w-auto" src="google-play-badge.svg" />
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="w-full pt-24 sm:pt-28 flex-1 bg-background" id="overview">
+    <main class="w-full pt-28 sm:pt-32 flex-1 bg-background" id="overview">
         <div class="flex flex-col w-full">
 
             <!-- Atmospheric Glow Backdrop -->
@@ -249,10 +301,10 @@
                             <!-- Official App Store Download Badges -->
                             <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto mb-space-xl">
                                 <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
-                                    <img alt="Download on the App Store" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
+                                    <img alt="Download on the App Store" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="app-store-badge.svg" />
                                 </a>
                                 <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
-                                    <img alt="Get it on Google Play" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
+                                    <img alt="Get it on Google Play" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="google-play-badge.svg" />
                                 </a>
                             </div>
 
@@ -273,12 +325,15 @@
                             </div>
                         </div>
 
-                        <!-- Right Column: Hero Smartphone Hardware Mockup -->
+                        <!-- Right Column: Hero Smartphone Hardware Mockup with Demo Video -->
                         <div class="flex-1 flex justify-center lg:justify-end">
-                            <div class="relative w-[280px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(14,165,233,0.18)] ring-1 ring-slate-800">
+                            <div class="relative w-[270px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(14,165,233,0.18)] ring-1 ring-slate-800">
                                 <!-- Phone Frame Inner Bezel -->
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[38px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Box Breathing Session with layered soundscapes" class="w-full h-full object-cover object-top" src="Phone-Screenshots/box-breathing-sounds.png" />
+                                    <video width="310" height="671" class="w-full h-full object-cover object-top block" autoplay loop muted playsinline preload="metadata" poster="Phone-Screenshots/box-breathing-sounds.webp">
+                                        <source src="calma-demo-video.webm" type="video/webm">
+                                        <img width="310" height="671" alt="Calma Box Breathing Session with layered soundscapes" class="w-full h-full object-cover object-top" src="Phone-Screenshots/box-breathing-sounds.webp" fetchpriority="high" />
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +367,7 @@
                             <!-- Phone Mockup Preview -->
                             <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                    <img alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="Phone-Screenshots/choose-session.png" />
+                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="Phone-Screenshots/choose-session.webp" />
                                 </div>
                             </div>
                         </div>
@@ -332,7 +387,7 @@
                             <!-- Phone Mockup Preview -->
                             <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                    <img alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="Phone-Screenshots/follow-pacer.png" />
+                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="Phone-Screenshots/follow-pacer.webp" />
                                 </div>
                             </div>
                         </div>
@@ -353,7 +408,7 @@
                             <div class="flex flex-col items-center">
                                 <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                     <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                        <img id="step3-phone-img" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="Phone-Screenshots/tune-sounds.png" />
+                                        <img id="step3-phone-img" width="240" height="520" loading="lazy" decoding="async" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="Phone-Screenshots/tune-sounds.webp" />
                                     </div>
                                 </div>
                             </div>
@@ -367,69 +422,129 @@
                 <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
                     <div class="text-center max-w-2xl mx-auto mb-space-2xl">
                         <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
-                            Engineered for somatic presence
+                            Designed to help you relax
                         </h2>
                         <p class="font-body-md text-body-md text-on-surface-variant">
-                            Explore the authentic mobile interface. Every screen is purposefully tuned to lower visual tension and cultivate sustained parasympathetic tone.
+                            Take a look inside the app. Every screen is thoughtfully created to reduce stress, calm your mind, and make breathing easy.
                         </p>
 
-                        <!-- Device Switcher Toggle Buttons -->
+                        <!-- Device Switcher Toggle Buttons (Touch-Optimized) -->
                         <div class="inline-flex items-center p-1.5 rounded-full bg-surface-container-high/60 border border-surface-container-highest mt-6 shadow-xs">
-                            <button type="button" id="deviceBtnIPhone" onclick="switchGalleryDevice('iphone')" class="px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">smartphone</span>
-                                <span>iPhone</span>
+                            <button type="button" id="deviceBtnIPhone" onclick="switchGalleryDevice('iphone')" class="px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 active:scale-95">
+                                <span class="material-symbols-outlined text-[17px] sm:text-[16px]">smartphone</span>
+                                <span>Phone</span>
                             </button>
-                            <button type="button" id="deviceBtnIPad" onclick="switchGalleryDevice('ipad')" class="px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5">
-                                <span class="material-symbols-outlined text-[16px]">tablet_mac</span>
-                                <span>iPad</span>
+                            <button type="button" id="deviceBtnIPad" onclick="switchGalleryDevice('ipad')" class="px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5 active:scale-95">
+                                <span class="material-symbols-outlined text-[17px] sm:text-[16px]">tablet_mac</span>
+                                <span>Tablet</span>
                             </button>
                         </div>
                     </div>
 
-                    <!-- 1. iPhone Gallery View -->
-                    <div id="galleryViewIphone" class="grid grid-cols-1 md:grid-cols-3 gap-space-xl items-center justify-items-center transition-opacity duration-300">
-                        <!-- Screen A: Lake Breathing Session -->
-                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Lake Breathing Session on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/breathing-session-lake.png" />
-                            </div>
-                        </div>
+                    <!-- 1. Phone Gallery View (Infinite automatic horizontal scroll) -->
+                    <div id="galleryViewIphone" class="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-8 min-h-[580px] sm:min-h-[640px] flex items-center transition-opacity duration-300">
+                        <!-- Left & Right Fade Gradients -->
+                        <div class="absolute left-0 inset-y-0 w-20 sm:w-36 bg-gradient-to-r from-surface-container-low/95 to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute right-0 inset-y-0 w-20 sm:w-36 bg-gradient-to-l from-surface-container-low/95 to-transparent z-10 pointer-events-none"></div>
 
-                        <!-- Screen B: Mountain Lake Inhale -->
-                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Mountain Lake Nature Visual on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/mountain-lake-session.png" />
+                        <!-- Infinite Marquee Track (Generous spacing & larger frames) -->
+                        <div class="marquee-track-phone gap-10 sm:gap-16 md:gap-20 px-8 items-center">
+                            <!-- Set 1: Phone Screenshots (5 unique session highlights) -->
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Box Breathing Soundscapes" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/box-breathing-sounds.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
                             </div>
-                        </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Flower Meadow Breathing Pacer" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Golden Sunlight Hall Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-sunlight-hall.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Mountain Panorama Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-mountain.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
 
-                        <!-- Screen C: Starfield Night Session -->
-                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Starfield Night Session on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/starfield-night-session.png" />
+                            <!-- Set 2: Duplicated for Seamless Infinite Loop -->
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Box Breathing Soundscapes" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/box-breathing-sounds.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Flower Meadow Breathing Pacer" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Golden Sunlight Hall Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-sunlight-hall.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[260px] sm:w-[290px] md:w-[320px] rounded-[46px] sm:rounded-[52px] bg-slate-900 p-3 sm:p-3.5 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[36px] sm:rounded-[42px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Mountain Panorama Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-mountain.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. iPad Gallery View (Hidden by default) -->
-                    <div id="galleryViewIpad" class="hidden grid grid-cols-1 md:grid-cols-3 gap-space-xl items-center justify-items-center transition-opacity duration-300">
-                        <!-- Screen A: iPad Lake Breathing Session -->
-                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Lake Breathing Session on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-lake-session.png" />
-                            </div>
-                        </div>
+                    <!-- 2. iPad Gallery View (Hidden by default, infinite automatic horizontal scroll) -->
+                    <div id="galleryViewIpad" class="hidden relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-8 min-h-[580px] sm:min-h-[660px] flex items-center transition-opacity duration-300">
+                        <!-- Left & Right Fade Gradients -->
+                        <div class="absolute left-0 inset-y-0 w-20 sm:w-36 bg-gradient-to-r from-surface-container-low/95 to-transparent z-10 pointer-events-none"></div>
+                        <div class="absolute right-0 inset-y-0 w-20 sm:w-36 bg-gradient-to-l from-surface-container-low/95 to-transparent z-10 pointer-events-none"></div>
 
-                        <!-- Screen B: iPad Mountain Lake Session -->
-                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Mountain Lake Nature Visual on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-mountain-lake.png" />
+                        <!-- Infinite Marquee Track (Generous spacing & larger frames) -->
+                        <div class="marquee-track-ipad gap-12 sm:gap-18 md:gap-24 px-8 items-center">
+                            <!-- Set 1: 3 Available iPad Screenshots -->
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Lake Session" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-lake-session.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
                             </div>
-                        </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Preview 5" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-5.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Preview 7" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-7.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
 
-                        <!-- Screen C: iPad Starfield Night Session -->
-                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
-                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
-                                <img alt="Calma Starfield Night Session on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-starfield-night.png" />
+                            <!-- Set 2: Duplicated for Seamless Infinite Loop -->
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Lake Session" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-lake-session.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Preview 5" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-5.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Preview 7" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-7.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -997,15 +1112,43 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#ebf5fc] py-14 border-t border-[#d8ecf9]" id="download">
+    <footer class="w-full bg-[#dcf0fa] py-14 border-t border-[#b9e2f8]" id="download">
         <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
+            <!-- Social Media Follow & Subscribe Icon Buttons -->
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61594067279024" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Facebook" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#1877F2] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@calmabreathing" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Calma on YouTube" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#FF0000] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@calma_app?lang=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on TikTok" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-black border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/calmabreathe/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Instagram" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#E4405F] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+
             <!-- App Store Badges -->
             <div class="flex items-center justify-center gap-4 sm:gap-5 mb-5">
                 <a class="hover:opacity-90 transition-opacity" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" rel="noopener noreferrer" target="_blank">
-                    <img alt="Download on the App Store" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
+                    <img alt="Download on the App Store" width="135" height="44" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
                 </a>
                 <a class="hover:opacity-90 transition-opacity" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" rel="noopener noreferrer" target="_blank">
-                    <img alt="Get it on Google Play" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
+                    <img alt="Get it on Google Play" width="135" height="44" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
                 </a>
             </div>
 
@@ -1025,9 +1168,9 @@
         // Auto-change step 3 phone customization screenshot every 2 seconds
         (function initStep3AutoCycle() {
             const images = [
-                'Phone-Screenshots/tune-sounds.png',
-                'Phone-Screenshots/tune-bells.png',
-                'Phone-Screenshots/tune-pace.png'
+                'Phone-Screenshots/tune-sounds.webp',
+                'Phone-Screenshots/tune-bells.webp',
+                'Phone-Screenshots/tune-pace.webp'
             ];
             const alts = [
                 'Calma Background Sounds customization',
@@ -1057,17 +1200,41 @@
 
             if (!iphoneView || !ipadView || !iphoneBtn || !ipadBtn) return;
 
+            const activeClass = 'px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 active:scale-95';
+            const inactiveClass = 'px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5 active:scale-95';
+
             if (device === 'iphone') {
                 iphoneView.classList.remove('hidden');
                 ipadView.classList.add('hidden');
-                iphoneBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5';
-                ipadBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5';
+                iphoneBtn.className = activeClass;
+                ipadBtn.className = inactiveClass;
             } else {
                 ipadView.classList.remove('hidden');
                 iphoneView.classList.add('hidden');
-                ipadBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5';
-                iphoneBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5';
+                ipadBtn.className = activeClass;
+                iphoneBtn.className = inactiveClass;
             }
+        }
+
+        // Performance Optimization: Pause off-screen CSS animations and video on mobile devices
+        if ('IntersectionObserver' in window) {
+            const animatedSections = document.querySelectorAll('#gallery, #reviews, #overview');
+            const perfObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const tracks = entry.target.querySelectorAll('.marquee-track-phone, .marquee-track-ipad, .marquee-track-left, .marquee-track-right');
+                    const video = entry.target.querySelector('video');
+                    
+                    if (entry.isIntersecting) {
+                        tracks.forEach(track => track.style.animationPlayState = 'running');
+                        if (video && video.paused) video.play().catch(() => {});
+                    } else {
+                        tracks.forEach(track => track.style.animationPlayState = 'paused');
+                        if (video && !video.paused) video.pause();
+                    }
+                });
+            }, { rootMargin: '150px 0px' });
+
+            animatedSections.forEach(section => perfObserver.observe(section));
         }
     </script>
 </body>
