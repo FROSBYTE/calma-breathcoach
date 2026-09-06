@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html class="h-full scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Calma : BreathCoach</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="playstore-app-icon-vibrant-curved.png" />
+    <link rel="apple-touch-icon" href="playstore-app-icon-vibrant-curved.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep. 25+ sessions, custom pacing, immersive visuals and sound." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Calma : BreathCoach" />
+    <meta property="og:title" content="Calma : BreathCoach" />
+    <meta property="og:description" content="Guided breathing exercises to calm anxiety, improve focus, and help you sleep." />
+    <meta property="og:image" content="playstore-app-icon-vibrant-curved.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+
+    <style>
+        @layer base {
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main > :first-child {
+                margin-top: 0 !important;
+            }
+
+            main > :last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes marquee-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes marquee-right {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .marquee-track-left {
+            display: flex;
+            width: max-content;
+            animation: marquee-left 40s linear infinite;
+        }
+
+        .marquee-track-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 44s linear infinite;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#004c6e",
+                        "primary-fixed": "#c9e6ff",
+                        "surface-container-highest": "#cce4f7",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "background": "#f0f7fd",
+                        "inverse-surface": "#213145",
+                        "tertiary": "#00687a",
+                        "surface-variant": "#d4e8f9",
+                        "secondary-fixed-dim": "#7bd0ff",
+                        "surface-tint": "#006591",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#004d6a",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#c2dcf3",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface": "#f0f7fd",
+                        "error": "#ba1a1a",
+                        "outline": "#6e7881",
+                        "on-primary-container": "#003751",
+                        "surface-container-low": "#e4f1fc",
+                        "outline-variant": "#b8d2ea",
+                        "on-primary-fixed": "#001e2f",
+                        "surface-container-high": "#d6eaf8",
+                        "surface-container": "#dcedfa",
+                        "secondary-container": "#40c2fd",
+                        "on-surface-variant": "#3e4850",
+                        "primary-container": "#0ea5e9",
+                        "on-tertiary-fixed": "#001f26",
+                        "primary": "#006591",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#c4e7ff",
+                        "on-secondary-fixed": "#001e2c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#003943",
+                        "primary-fixed-dim": "#89ceff",
+                        "on-secondary-fixed-variant": "#004c69",
+                        "secondary": "#00668a",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "inverse-primary": "#89ceff",
+                        "tertiary-fixed": "#acedff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#00aac6",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "space-md": "1rem",
+                        "space-lg": "1.5rem",
+                        "container-mobile-padding": "1.25rem",
+                        "gutter-default": "1.5rem",
+                        "space-3xl": "4rem",
+                        "space-4xl": "6rem",
+                        "space-xl": "2rem",
+                        "space-sm": "0.75rem",
+                        "container-desktop-max": "72rem",
+                        "space-xs": "0.5rem",
+                        "space-2xl": "3rem",
+                        "container-tablet-padding": "2rem",
+                        "space-2xs": "0.25rem"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-hero": ["Plus Jakarta Sans", "sans-serif"],
+                        "timer-display": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "display-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-sm": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-lg": ["17px", { "lineHeight": "26px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+                        "body-md": ["15px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+                        "timer-display": ["64px", { "lineHeight": "64px", "letterSpacing": "-0.04em", "fontWeight": "200" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+                        "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-background font-body-md text-on-surface flex flex-col antialiased selection:bg-sky-100 selection:text-sky-900">
+
+    <!-- Floating Pill Header -->
+    <header class="fixed top-4 sm:top-5 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none">
+        <div class="max-w-[72rem] mx-auto flex items-center justify-between px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-surface/85 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
+            <!-- Logo -->
+            <a class="flex items-center gap-2.5 group flex-shrink-0" href="#">
+                <img alt="Calma: Breathcoach Logo" class="w-8 h-8 rounded-full object-cover shadow-xs border border-surface-container-high/80 flex-shrink-0" src="playstore-app-icon-vibrant-curved.png" />
+                <span class="font-headline-sm text-[15px] sm:text-[16px] tracking-tight text-on-surface group-hover:text-primary transition-colors font-semibold">
+                    <span class="sm:hidden">Calma</span>
+                    <span class="hidden sm:inline">Calma : BreathCoach</span>
+                </span>
+            </a>
+
+            <!-- Center Navigation Links (How It Works, App Gallery, Reviews) -->
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 mx-auto">
+                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#how-it-works">How It Works</a>
+                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#gallery">App Gallery</a>
+                <a class="font-body-md text-[14px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#reviews">Reviews</a>
+            </nav>
+
+            <!-- Right App Store & Google Play Badges -->
+            <div class="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+                <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
+                    <img alt="Download on the App Store" class="h-7 sm:h-8 w-auto" src="app-store-badge.svg" />
+                </a>
+                <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
+                    <img alt="Get it on Google Play" class="h-7 sm:h-8 w-auto" src="google-play-badge.svg" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full pt-24 sm:pt-28 flex-1 bg-background" id="overview">
+        <div class="flex flex-col w-full">
+
+            <!-- Atmospheric Glow Backdrop -->
+            <div class="relative w-full overflow-hidden">
+                <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[54rem] h-[36rem] bg-gradient-to-b from-sky-200/40 via-surface-container-low/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+                <!-- HERO SECTION -->
+                <section class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl pt-space-2xl pb-space-3xl">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-2xl">
+                        
+                        <!-- Left Column: Editorial Manifesto -->
+                        <div class="flex-1 max-w-xl flex flex-col items-start">
+                            <h1 class="font-display-hero text-display-hero-mobile sm:text-display-hero text-on-surface tracking-tight leading-tight mb-space-sm font-semibold">
+                                Breathwork made simple
+                            </h1>
+
+                            <p class="font-headline-sm text-[17px] sm:text-[19px] text-primary font-medium mb-space-md leading-snug">
+                                Guided breathing exercises to calm anxiety, improve focus, and help you sleep.
+                            </p>
+
+                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-xl leading-relaxed">
+                                Calma is a breath coach for your pocket. Whether you're new to breathwork or already meditate regularly, Calma pairs guided breathing exercises with immersive visuals and sound to help you relax, refocus, and reset.
+                            </p>
+
+                            <!-- Official App Store Download Badges -->
+                            <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto mb-space-xl">
+                                <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
+                                    <img alt="Download on the App Store" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
+                                </a>
+                                <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
+                                    <img alt="Get it on Google Play" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
+                                </a>
+                            </div>
+
+                            <!-- Meta Specifications Strip -->
+                            <div class="grid grid-cols-3 gap-space-md pt-space-md border-t border-surface-container-high/80 w-full">
+                                <div>
+                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">25+</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Guided Exercises</div>
+                                </div>
+                                <div>
+                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Custom</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Pacing &amp; Audio</div>
+                                </div>
+                                <div>
+                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Zero</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Intrusive Clutter</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Hero Smartphone Hardware Mockup -->
+                        <div class="flex-1 flex justify-center lg:justify-end">
+                            <div class="relative w-[280px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(14,165,233,0.18)] ring-1 ring-slate-800">
+                                <!-- Phone Frame Inner Bezel -->
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[38px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Box Breathing Session with layered soundscapes" class="w-full h-full object-cover object-top" src="Phone-Screenshots/box-breathing-sounds.png" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION 2: HOW IT WORKS -->
+            <section class="w-full bg-surface-container-lowest py-space-3xl border-y border-surface-container-high/50" id="how-it-works">
+                <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
+                    <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                            How it works
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                        <!-- Step 1: Choose a session -->
+                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                            <div class="mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
+                                    01
+                                </div>
+                                <h3 class="font-headline-sm text-[19px] text-on-surface font-semibold mb-1.5">Choose a session</h3>
+                                <p class="font-body-md text-[13.5px] text-on-surface-variant leading-relaxed">
+                                    Pick from quick resets for anxiety, deeper relaxation routines, or focus rhythms based on how you feel.
+                                </p>
+                            </div>
+                            
+                            <!-- Phone Mockup Preview -->
+                            <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
+                                    <img alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="Phone-Screenshots/choose-session.png" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Follow the pacer -->
+                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                            <div class="mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
+                                    02
+                                </div>
+                                <h3 class="font-headline-sm text-[19px] text-on-surface font-semibold mb-1.5">Follow the pacer</h3>
+                                <p class="font-body-md text-[13.5px] text-on-surface-variant leading-relaxed">
+                                    A gentle, continuous waveform guides your lung expansion without jarring transitions or complicated counts.
+                                </p>
+                            </div>
+                            
+                            <!-- Phone Mockup Preview -->
+                            <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
+                                    <img alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="Phone-Screenshots/follow-pacer.png" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Tune the sound & pace -->
+                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                            <div class="mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
+                                    03
+                                </div>
+                                <h3 class="font-headline-sm text-[19px] text-on-surface font-semibold mb-1.5">Tune the sound &amp; pace</h3>
+                                <p class="font-body-md text-[13.5px] text-on-surface-variant leading-relaxed">
+                                    Guided tones signal each inhale and exhale so you can close your eyes. Adjust timing down to the second whenever you want.
+                                </p>
+                            </div>
+                            
+                            <!-- Phone Mockup Preview that auto-cycles every 2 seconds -->
+                            <div class="flex flex-col items-center">
+                                <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                                    <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
+                                        <img id="step3-phone-img" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="Phone-Screenshots/tune-sounds.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: APP ARCHITECTURE SHOWCASE (3 PHONES GALLERY) -->
+            <section class="w-full bg-surface-container-low/70 py-space-3xl border-b border-surface-container-high/50" id="gallery">
+                <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
+                    <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                            Engineered for somatic presence
+                        </h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">
+                            Explore the authentic mobile interface. Every screen is purposefully tuned to lower visual tension and cultivate sustained parasympathetic tone.
+                        </p>
+
+                        <!-- Device Switcher Toggle Buttons -->
+                        <div class="inline-flex items-center p-1.5 rounded-full bg-surface-container-high/60 border border-surface-container-highest mt-6 shadow-xs">
+                            <button type="button" id="deviceBtnIPhone" onclick="switchGalleryDevice('iphone')" class="px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[16px]">smartphone</span>
+                                <span>iPhone</span>
+                            </button>
+                            <button type="button" id="deviceBtnIPad" onclick="switchGalleryDevice('ipad')" class="px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[16px]">tablet_mac</span>
+                                <span>iPad</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 1. iPhone Gallery View -->
+                    <div id="galleryViewIphone" class="grid grid-cols-1 md:grid-cols-3 gap-space-xl items-center justify-items-center transition-opacity duration-300">
+                        <!-- Screen A: Lake Breathing Session -->
+                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Lake Breathing Session on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/breathing-session-lake.png" />
+                            </div>
+                        </div>
+
+                        <!-- Screen B: Mountain Lake Inhale -->
+                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Mountain Lake Nature Visual on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/mountain-lake-session.png" />
+                            </div>
+                        </div>
+
+                        <!-- Screen C: Starfield Night Session -->
+                        <div class="relative w-[240px] sm:w-[260px] rounded-[42px] bg-slate-900 p-2.5 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[34px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Starfield Night Session on iPhone" class="w-full h-full object-cover object-top" src="Phone-Screenshots/starfield-night-session.png" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. iPad Gallery View (Hidden by default) -->
+                    <div id="galleryViewIpad" class="hidden grid grid-cols-1 md:grid-cols-3 gap-space-xl items-center justify-items-center transition-opacity duration-300">
+                        <!-- Screen A: iPad Lake Breathing Session -->
+                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Lake Breathing Session on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-lake-session.png" />
+                            </div>
+                        </div>
+
+                        <!-- Screen B: iPad Mountain Lake Session -->
+                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Mountain Lake Nature Visual on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-mountain-lake.png" />
+                            </div>
+                        </div>
+
+                        <!-- Screen C: iPad Starfield Night Session -->
+                        <div class="relative w-full max-w-[340px] rounded-[32px] bg-slate-900 p-3 shadow-lg ring-1 ring-slate-800">
+                            <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[22px] overflow-hidden flex flex-col border border-slate-800">
+                                <img alt="Calma Starfield Night Session on iPad" class="w-full h-full object-contain block" src="Ipad Screenshot/ipad-starfield-night.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- SECTION 6: AUTHENTIC USER REVIEWS -->
+            <section class="max-w-[83rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl py-space-3xl" id="reviews">
+                <div class="text-center max-w-2xl mx-auto mb-space-2xl">
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                        What people are saying
+                    </h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Real feedback from practitioners and everyday users using Calma to cultivate steady calm.
+                    </p>
+                </div>
+
+                <!-- Infinite Marquee Scrolling Container -->
+                <div class="relative w-full overflow-hidden flex flex-col gap-6 py-2">
+                    <!-- Left and Right Gradient Mask for Smooth Fade -->
+                    <div class="absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+
+                    <!-- Row 1: Leftward Infinite Marquee -->
+                    <div class="overflow-hidden w-full">
+                        <div class="marquee-track-left gap-5">
+                            <!-- Set 1 -->
+                            <!-- Review 1: Vivek R Menon -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-sky-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                V
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Vivek R Menon</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I've been using this app for a while and really enjoy it. The guided breathing sessions are easy to follow, the nature sounds are calming, and the clean interface makes it easy to relax anytime. It's thoughtfully designed, and I'm looking forward to future updates. Great work!"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 2: JananiJeevan -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-[13px]">
+                                                J
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">JananiJeevan</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Effective and helpful breathing app for managing anxiety and stress. It offers multiple breathing sessions according to our customisation and has been a great coach to feel relaxed"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 3: Vimal Gopal -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                V
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Vimal Gopal</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I use this to lower my heart rate before swimming. Love it, does exactly what it is supposed to do, with a really clean ui."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 4: Sanoj Sen -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-teal-100 text-teal-800 font-bold flex items-center justify-center text-[13px]">
+                                                S
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Sanoj Sen</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Good start for creating an app well polished I say, As a person who works and uses breathwork, I would say...this is good, like i don't need to always stay in the screen to follow the breathing, the fade out fade in thing is useful for that."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 5: Fat Loss With Arun -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Fat Loss With Arun</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I started using this app once I wake up , play 'lock me in' for like 5-10 min and then start my day. I would prefer if you could bring an alarm system which will notify me and go straight into the session. Also users should be also able to set a 10 min session so that I don't need to set the timer every time"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Duplicate Set 1 (for seamless loop) -->
+                            <!-- Review 1: Vivek R Menon -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-sky-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                V
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Vivek R Menon</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I've been using this app for a while and really enjoy it. The guided breathing sessions are easy to follow, the nature sounds are calming, and the clean interface makes it easy to relax anytime. It's thoughtfully designed, and I'm looking forward to future updates. Great work!"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 2: JananiJeevan -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-[13px]">
+                                                J
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">JananiJeevan</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Effective and helpful breathing app for managing anxiety and stress. It offers multiple breathing sessions according to our customisation and has been a great coach to feel relaxed"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 3: Vimal Gopal -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                V
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Vimal Gopal</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I use this to lower my heart rate before swimming. Love it, does exactly what it is supposed to do, with a really clean ui."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 4: Sanoj Sen -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-teal-100 text-teal-800 font-bold flex items-center justify-center text-[13px]">
+                                                S
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Sanoj Sen</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Good start for creating an app well polished I say, As a person who works and uses breathwork, I would say...this is good, like i don't need to always stay in the screen to follow the breathing, the fade out fade in thing is useful for that."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 5: Fat Loss With Arun -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Fat Loss With Arun</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I started using this app once I wake up , play 'lock me in' for like 5-10 min and then start my day. I would prefer if you could bring an alarm system which will notify me and go straight into the session. Also users should be also able to set a 10 min session so that I don't need to set the timer every time"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Rightward/Reverse Infinite Marquee -->
+                    <div class="overflow-hidden w-full">
+                        <div class="marquee-track-right gap-5">
+                            <!-- Set 2 -->
+                            <!-- Review 6: bindu menon -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-800 font-bold flex items-center justify-center text-[13px]">
+                                                B
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">bindu menon</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Starting to like the app. Initially there were only a few soothing videos for the breathing session, but as of the latest update, the creator has added a bunch more videos which are really good"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 7: Abhiram S -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-slate-800 text-white font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Abhiram S</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Awesome app"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 8: aryadevi kn -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-800 font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">aryadevi kn</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I use this app every morning before i start my day"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 9: pooja padmakumar -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                P
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">pooja padmakumar</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Helped me through work anxiety. good app"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Duplicate Set 2 (for seamless loop) -->
+                            <!-- Review 6: bindu menon -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-800 font-bold flex items-center justify-center text-[13px]">
+                                                B
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">bindu menon</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Starting to like the app. Initially there were only a few soothing videos for the breathing session, but as of the latest update, the creator has added a bunch more videos which are really good"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 7: Abhiram S -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-slate-800 text-white font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Abhiram S</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Awesome app"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 8: aryadevi kn -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-800 font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">aryadevi kn</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I use this app every morning before i start my day"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 9: pooja padmakumar -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                P
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">pooja padmakumar</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Helped me through work anxiety. good app"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-[#ebf5fc] py-14 border-t border-[#d8ecf9]" id="download">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
+            <!-- App Store Badges -->
+            <div class="flex items-center justify-center gap-4 sm:gap-5 mb-5">
+                <a class="hover:opacity-90 transition-opacity" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" rel="noopener noreferrer" target="_blank">
+                    <img alt="Download on the App Store" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
+                </a>
+                <a class="hover:opacity-90 transition-opacity" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" rel="noopener noreferrer" target="_blank">
+                    <img alt="Get it on Google Play" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
+                </a>
+            </div>
+
+            <!-- Copyright Notice -->
+            <p class="text-[13px] text-slate-600 mb-2.5 font-normal">
+                Copyright &copy; 2026 Calma: Breathcoach
+            </p>
+
+            <!-- Policy Links -->
+            <div class="flex items-center justify-center text-[13px] font-normal">
+                <a class="text-[#f97316] hover:underline" href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-change step 3 phone customization screenshot every 2 seconds
+        (function initStep3AutoCycle() {
+            const images = [
+                'Phone-Screenshots/tune-sounds.png',
+                'Phone-Screenshots/tune-bells.png',
+                'Phone-Screenshots/tune-pace.png'
+            ];
+            const alts = [
+                'Calma Background Sounds customization',
+                'Calma Guided Breathing bells customization',
+                'Calma Inhale pace slider customization'
+            ];
+            let currentIndex = 0;
+            const imgEl = document.getElementById('step3-phone-img');
+            if (!imgEl) return;
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imgEl.style.opacity = '0';
+                setTimeout(() => {
+                    imgEl.src = images[currentIndex];
+                    imgEl.alt = alts[currentIndex];
+                    imgEl.style.opacity = '1';
+                }, 200);
+            }, 2000);
+        })();
+
+        function switchGalleryDevice(device) {
+            const iphoneView = document.getElementById('galleryViewIphone');
+            const ipadView = document.getElementById('galleryViewIpad');
+            const iphoneBtn = document.getElementById('deviceBtnIPhone');
+            const ipadBtn = document.getElementById('deviceBtnIPad');
+
+            if (!iphoneView || !ipadView || !iphoneBtn || !ipadBtn) return;
+
+            if (device === 'iphone') {
+                iphoneView.classList.remove('hidden');
+                ipadView.classList.add('hidden');
+                iphoneBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5';
+                ipadBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5';
+            } else {
+                ipadView.classList.remove('hidden');
+                iphoneView.classList.add('hidden');
+                ipadBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5';
+                iphoneBtn.className = 'px-5 py-1.5 rounded-full text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5';
+            }
+        }
+    </script>
+</body>
+
+</html>

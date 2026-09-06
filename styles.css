@@ -1,0 +1,711 @@
+:root {
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --hero-bg-top: #0a1329;
+    --hero-bg-bottom: #1e3a6a;
+    --text-dark: #0f172a;
+    --text-medium: #475569;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+    background: var(--hero-bg-top);
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-download-btn {
+    height: 48px;
+    width: auto;
+    border-radius: 6px;
+    display: block;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.header-buttons a:hover .app-download-btn,
+.hero-buttons a:hover .app-download-btn,
+.footer-buttons a:hover .app-download-btn {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+    background: linear-gradient(180deg, var(--hero-bg-top) 0%, var(--hero-bg-bottom) 100%);
+    color: var(--white);
+    padding: 60px 0 80px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-headline {
+    font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero-subhead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #bae6fd;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    color: #e2e8f0;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Phone Frame */
+.hero-mockup-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-frame {
+    position: relative;
+    width: 280px;
+    height: 570px;
+    padding: 10px;
+    background: #0f172a;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   Section Shared Typography
+   ========================================================================== */
+
+.section-title {
+    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    color: var(--text-dark);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+    font-size: 1.08rem;
+    color: var(--text-medium);
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   How It Works
+   ========================================================================== */
+
+.how-it-works {
+    padding: 80px 0;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.step-box {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 32px 24px;
+}
+
+.step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #e0f2fe;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.step-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Why Calma (Features + Screenshot Carousel)
+   ========================================================================== */
+
+.why-calma {
+    padding: 90px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.why-calma-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.carousel-phone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-phone-container .phone-frame {
+    width: 270px;
+    height: 550px;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+    z-index: 10;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.carousel-btn.prev {
+    left: -18px;
+}
+
+.carousel-btn.next {
+    right: -18px;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    transform: scale(1.25);
+}
+
+.features-content .section-title {
+    margin-bottom: 28px;
+}
+
+.features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.55;
+}
+
+.feature-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Sessions for Every Moment
+   ========================================================================== */
+
+.sessions-overview {
+    padding: 85px 0;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sessions-header {
+    margin-bottom: 44px;
+}
+
+.sessions-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.session-category-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.category-caption {
+    font-size: 0.92rem;
+    color: var(--text-medium);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.sessions-item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.sessions-item-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.timing-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: #e0f2fe;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   Visuals & Built for Real Life
+   ========================================================================== */
+
+.built-for-life {
+    padding: 80px 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.life-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.life-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+}
+
+.life-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+}
+
+.life-card p {
+    font-size: 0.98rem;
+    color: var(--text-medium);
+    margin-bottom: 12px;
+    line-height: 1.65;
+}
+
+.life-card p:last-child {
+    margin-bottom: 0;
+}
+
+.life-card-sub {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+}
+
+/* ==========================================================================
+   User Reviews Section
+   ========================================================================== */
+
+.user-reviews {
+    padding: 85px 0;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-reviews .section-title {
+    margin-bottom: 40px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reviewer-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0284c7;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.reviewer-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.review-date {
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
+.review-stars {
+    color: #f59e0b;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-left: auto;
+}
+
+.review-text {
+    font-size: 0.92rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+
+.footer {
+    padding: 70px 0 40px;
+    background: var(--white);
+    text-align: center;
+}
+
+.footer-cta h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 24px;
+    color: var(--text-dark);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-meta {
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.88rem;
+}
+
+.footer-copyright {
+    margin-bottom: 8px;
+}
+
+.footer-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-contacts a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.footer-contacts a:hover {
+    text-decoration: underline;
+}
+
+.contact-sep {
+    color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .why-calma-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .carousel-phone-container {
+        justify-content: center;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-buttons {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 0 60px;
+    }
+
+    .sessions-categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .life-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .phone-frame {
+        width: 240px;
+        height: 490px;
+    }
+
+    .carousel-phone-container .phone-frame {
+        width: 240px;
+        height: 490px;
+    }
+}
