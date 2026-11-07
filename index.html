@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href="playstore-app-icon-vibrant-curved.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="Phone-Screenshots/box-breathing-sounds.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/ipad/ipad-curved-pacer-starfield.webp" type="image/webp" fetchpriority="high" />
 
     <!-- SEO & Social Sharing (Open Graph & Twitter) -->
     <meta name="description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep 80+ sessions, custom pacing, immersive visuals and sound." />
@@ -135,6 +135,90 @@
             .marquee-track-phone:hover {
                 animation-play-state: paused;
             }
+        }
+        .hero-sound {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 4px;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, .55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #fff;
+        }
+        .hero-sound-btn {
+            width: 36px;
+            height: 36px;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+        }
+        .hero-sound-btn:hover { background: rgba(255, 255, 255, .15); }
+        .hero-sound-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .hero-sound-btn .icon-sound { display: none; }
+        .hero-sound.is-unmuted .icon-sound { display: block; }
+        .hero-sound.is-unmuted .icon-muted { display: none; }
+        .hero-sound-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 0;
+            margin: 0;
+            opacity: 0;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, .35);
+            cursor: pointer;
+            transition: width .25s ease, opacity .2s ease, margin .25s ease;
+        }
+        .hero-sound:hover .hero-sound-slider,
+        .hero-sound:focus-within .hero-sound-slider {
+            width: 84px;
+            margin: 0 8px 0 10px;
+            opacity: 1;
+        }
+        .hero-sound-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            border: 0;
+        }
+        .hero-sound-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+            border: 0;
+        }
+        .video-spinner {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: opacity .25s ease;
+        }
+        .video-spinner::before {
+            content: "";
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, .2);
+            border-top-color: rgba(255, 255, 255, .85);
+            animation: video-spin .8s linear infinite;
+        }
+        .video-spinner.is-hidden { opacity: 0; }
+        @keyframes video-spin { to { transform: rotate(360deg); } }
+        @media (prefers-reduced-motion: reduce) {
+            .video-spinner::before { animation-duration: 2s; }
         }
     </style>
 
@@ -352,10 +436,18 @@
                             <div class="relative w-[270px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(14,165,233,0.18)] ring-1 ring-slate-800">
                                 <!-- Phone Frame Inner Bezel -->
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[38px] overflow-hidden flex flex-col border border-slate-800">
-                                    <video width="310" height="671" class="w-full h-full object-cover object-top block" autoplay loop muted playsinline preload="metadata" poster="Phone-Screenshots/box-breathing-sounds.webp">
-                                        <source src="calma-demo-video.webm" type="video/webm">
-                                        <img width="310" height="671" alt="Calma Box Breathing Session with layered soundscapes" class="w-full h-full object-cover object-top" src="Phone-Screenshots/box-breathing-sounds.webp" fetchpriority="high" />
+                                    <video id="hero-video" width="310" height="671" class="w-full h-full object-cover object-top block" autoplay loop muted playsinline preload="metadata" poster="assets/ipad/ipad-curved-pacer-starfield.webp">
+                                        <source src="assets/videos/hero-demo.webm" type="video/webm">
+                                        <img width="310" height="671" alt="Calma Box Breathing Session with layered soundscapes" class="w-full h-full object-cover object-top" src="assets/ipad/ipad-curved-pacer-starfield.webp" fetchpriority="high" />
                                     </video>
+                                </div>
+                                <!-- Sound control: muted by default, volume slider reveals on hover/focus -->
+                                <div class="hero-sound absolute bottom-5 right-5 sm:bottom-6 sm:right-6 z-10">
+                                    <input type="range" id="hero-volume" class="hero-sound-slider" min="0" max="1" step="0.05" value="0.6" aria-label="Hero video volume">
+                                    <button type="button" id="hero-sound-btn" class="hero-sound-btn" aria-label="Unmute video" aria-pressed="false">
+                                        <svg class="icon-muted" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                                        <svg class="icon-sound" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -389,7 +481,7 @@
                             <!-- Phone Mockup Preview -->
                             <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="Phone-Screenshots/choose-session.webp" />
+                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="assets/iphone/choose-session.webp" />
                                 </div>
                             </div>
                         </div>
@@ -409,7 +501,7 @@
                             <!-- Phone Mockup Preview -->
                             <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="Phone-Screenshots/follow-pacer.webp" />
+                                    <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="assets/iphone/follow-pacer.webp" />
                                 </div>
                             </div>
                         </div>
@@ -430,9 +522,105 @@
                             <div class="flex flex-col items-center">
                                 <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                     <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
-                                        <img id="step3-phone-img" width="240" height="520" loading="lazy" decoding="async" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="Phone-Screenshots/tune-sounds.webp" />
+                                        <img id="step3-phone-img" width="240" height="520" loading="lazy" decoding="async" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="assets/iphone/tune-sounds.webp" />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: BREATHING SHAPES -->
+            <section class="w-full bg-surface-container-lowest py-space-3xl border-y border-surface-container-high/50" id="breathing-shapes">
+                <div class="max-w-[80rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
+                    <div class="text-center px-2 max-w-2xl mx-auto mb-space-2xl">
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                            Breathing shapes
+                        </h2>
+                        <p class="font-body-md text-[16.5px] leading-[24px] text-on-surface-variant">
+                            Instead of trying to count seconds in your head (which can cause mild stress or distraction if you lose track), your eyes handle the timing, freeing your brain to focus on relaxation
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mx-auto">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Sleep 4-7-8 breathing shape animation" data-src="assets/videos/shape-curved-lines.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Curved Lines</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Featured 3-7 breathing shape animation" data-src="assets/videos/shape-straight-lines.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Straight Lines</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Deep Release breathing shape animation" data-src="assets/videos/shape-vertical-line.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Vertical Line</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Twilight Drift breathing shape animation" data-src="assets/videos/shape-square.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Square</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Quick Calm breathing shape animation" data-src="assets/videos/shape-triangle.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Triangle</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Breath Free breathing shape animation" data-src="assets/videos/shape-rectangle.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Rectangle</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Nervous System Reset breathing shape animation" data-src="assets/videos/shape-heart.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Heart</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tranquil breathing shape animation" data-src="assets/videos/shape-semi-circle.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Semi Circle</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tai Chi breathing shape animation" data-src="assets/videos/shape-octagon.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Octagon</p>
+                            </div>
+                        </div>
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
+                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Multi polygon breathing shape animation" data-src="assets/videos/shape-multi-polygon.webm"></video>
+                            </div>
+                            <div class="pt-3 pb-1.5 px-0.5 text-center">
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Multi polygon</p>
                             </div>
                         </div>
                     </div>
@@ -471,57 +659,87 @@
 
                         <!-- Infinite Marquee Track (Generous spacing & larger frames) -->
                         <div class="marquee-track-phone gap-10 sm:gap-16 md:gap-20 px-8 items-center">
-                            <!-- Set 1: Phone Screenshots (5 unique session highlights) -->
+                            <!-- Set 1: Phone Screenshots -->
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Box Breathing Soundscapes" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/box-breathing-sounds.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Home Screen with Breathing Sessions" class="w-full h-full object-cover object-top block" src="assets/iphone/home-sessions.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Flower Meadow Breathing Pacer" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer over Night Flowers" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-night-flowers.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer in a Flower Meadow" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Golden Sunlight Hall Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-sunlight-hall.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer at Sunset" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-sunset-flowers.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Mountain Panorama Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-mountain.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="assets/iphone/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Straight Lines Pacer over a Mountain Lake" class="w-full h-full object-cover object-top block" src="assets/iphone/straight-pacer-mountain-lake.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Vertical Line Pacer with Cherry Blossoms" class="w-full h-full object-cover object-top block" src="assets/iphone/vertical-pacer-cherry-blossom.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Octagon Breathing Shape over a Beach" class="w-full h-full object-cover object-top block" src="assets/iphone/octagon-pacer-beach.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
 
                             <!-- Set 2: Duplicated for Seamless Infinite Loop -->
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Box Breathing Soundscapes" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/box-breathing-sounds.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Home Screen with Breathing Sessions" class="w-full h-full object-cover object-top block" src="assets/iphone/home-sessions.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Flower Meadow Breathing Pacer" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer over Night Flowers" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-night-flowers.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer in a Flower Meadow" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-meadow.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Golden Sunlight Hall Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-sunlight-hall.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Curved Breathing Pacer at Sunset" class="w-full h-full object-cover object-top block" src="assets/iphone/curved-pacer-sunset-flowers.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
-                                    <img alt="Calma Mountain Panorama Session" class="w-full h-full object-cover object-top block" src="Phone-Screenshots/session-mountain.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                    <img alt="Calma Follow Pacer Breathing Guide" class="w-full h-full object-cover object-top block" src="assets/iphone/follow-pacer.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Straight Lines Pacer over a Mountain Lake" class="w-full h-full object-cover object-top block" src="assets/iphone/straight-pacer-mountain-lake.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Vertical Line Pacer with Cherry Blossoms" class="w-full h-full object-cover object-top block" src="assets/iphone/vertical-pacer-cherry-blossom.webp" width="320" height="693" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="relative w-[208px] sm:w-[232px] md:w-[256px] rounded-[37px] sm:rounded-[42px] bg-slate-900 p-2.5 sm:p-3 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[28px] sm:rounded-[33px] overflow-hidden flex flex-col border border-slate-800">
+                                    <img alt="Calma Octagon Breathing Shape over a Beach" class="w-full h-full object-cover object-top block" src="assets/iphone/octagon-pacer-beach.webp" width="320" height="693" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                         </div>
@@ -535,37 +753,87 @@
 
                         <!-- Infinite Marquee Track (Generous spacing & larger frames) -->
                         <div class="marquee-track-ipad gap-12 sm:gap-18 md:gap-24 px-8 items-center">
-                            <!-- Set 1: 3 Available iPad Screenshots -->
+                            <!-- Set 1: iPad Screenshots -->
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Lake Session" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-lake-session.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Home Screen with Breathing Sessions" class="w-full h-full object-contain block" src="assets/ipad/ipad-home-sessions.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Preview 5" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-5.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Explore Sessions" class="w-full h-full object-contain block" src="assets/ipad/ipad-explore-sessions.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Preview 7" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-7.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Curved Pacer under the Stars" class="w-full h-full object-contain block" src="assets/ipad/ipad-curved-pacer-starfield.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Straight Lines Pacer at Sunset" class="w-full h-full object-contain block" src="assets/ipad/ipad-straight-pacer-sunset.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Night Balcony Session" class="w-full h-full object-contain block" src="assets/ipad/ipad-curved-pacer-balcony.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Vertical Line Pacer by the Lake" class="w-full h-full object-contain block" src="assets/ipad/ipad-vertical-pacer-lake.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Octagon Breathing Shape in Starfield" class="w-full h-full object-contain block" src="assets/ipad/ipad-octagon-pacer-stars.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Octagon Breathing Shape over a Beach" class="w-full h-full object-contain block" src="assets/ipad/ipad-octagon-pacer-beach.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
 
                             <!-- Set 2: Duplicated for Seamless Infinite Loop -->
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Lake Session" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-lake-session.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Home Screen with Breathing Sessions" class="w-full h-full object-contain block" src="assets/ipad/ipad-home-sessions.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Preview 5" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-5.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Explore Sessions" class="w-full h-full object-contain block" src="assets/ipad/ipad-explore-sessions.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                             <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
                                 <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
-                                    <img alt="Calma iPad Preview 7" class="w-full h-full object-contain block" src="Tablet-Screenshots/ipad-preview-7.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                    <img alt="Calma iPad Curved Pacer under the Stars" class="w-full h-full object-contain block" src="assets/ipad/ipad-curved-pacer-starfield.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Straight Lines Pacer at Sunset" class="w-full h-full object-contain block" src="assets/ipad/ipad-straight-pacer-sunset.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Night Balcony Session" class="w-full h-full object-contain block" src="assets/ipad/ipad-curved-pacer-balcony.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Vertical Line Pacer by the Lake" class="w-full h-full object-contain block" src="assets/ipad/ipad-vertical-pacer-lake.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Octagon Breathing Shape in Starfield" class="w-full h-full object-contain block" src="assets/ipad/ipad-octagon-pacer-stars.webp" width="500" height="667" loading="lazy" decoding="async" />
+                                </div>
+                            </div>
+                            <div class="w-[330px] sm:w-[420px] md:w-[470px] lg:w-[500px] rounded-[34px] sm:rounded-[42px] bg-slate-900 p-3.5 sm:p-4 shadow-2xl ring-1 ring-slate-800 flex-shrink-0" aria-hidden="true">
+                                <div class="w-full aspect-[2048/2732] bg-slate-950 rounded-[24px] sm:rounded-[30px] overflow-hidden border border-slate-800">
+                                    <img alt="Calma iPad Octagon Breathing Shape over a Beach" class="w-full h-full object-contain block" src="assets/ipad/ipad-octagon-pacer-beach.webp" width="500" height="667" loading="lazy" decoding="async" />
                                 </div>
                             </div>
                         </div>
@@ -576,93 +844,6 @@
 
 
 
-            <!-- SECTION: BREATHING SHAPES -->
-            <section class="w-full bg-surface-container-lowest py-space-3xl border-y border-surface-container-high/50" id="breathing-shapes">
-                <div class="max-w-[80rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
-                    <div class="text-center px-2 max-w-2xl mx-auto mb-space-2xl">
-                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
-                            Breathing shapes
-                        </h2>
-                        <p class="font-body-md text-[16.5px] leading-[24px] text-on-surface-variant">
-                            Instead of trying to count seconds in your head (which can cause mild stress or distraction if you lose track), your eyes handle the timing, freeing your brain to focus on relaxation
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mx-auto">
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Quick Calm breathing shape animation" data-src="videos/3-4-5-quick-calm-3-4-5-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Triangle</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Featured 3-7 breathing shape animation" data-src="videos/3-7-featured-3-0-7-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Straight Lines</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Nervous System Reset breathing shape animation" data-src="videos/4-2-6-nervous-system-reset-4-2-6-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Heart</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Sleep 4-7-8 breathing shape animation" data-src="videos/4-7-8-featured-sleep-4-7-8-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Curved Lines</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Breath Free breathing shape animation" data-src="videos/5-2-7-2-breath-free-5-2-7-2.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Rectangle</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Deep Release breathing shape animation" data-src="videos/deep-release-6-12-6-0-12-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Vertical Line</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tai Chi breathing shape animation" data-src="videos/tai-chi-3-3-6-3-3-6-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Octagon</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tranquil breathing shape animation" data-src="videos/tranquil-5-5-11-5.5-0-11-0.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Semi Circle</p>
-                            </div>
-                        </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
-                            <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
-                                <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Twilight Drift breathing shape animation" data-src="videos/twilight-drift-4-4-4-4.webm"></video>
-                            </div>
-                            <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Square</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- SECTION 6: AUTHENTIC USER REVIEWS -->
             <section class="max-w-[83rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl py-space-3xl" id="reviews">
@@ -1285,9 +1466,9 @@
         // Auto-change step 3 phone customization screenshot every 2 seconds
         (function initStep3AutoCycle() {
             const images = [
-                'Phone-Screenshots/tune-sounds.webp',
-                'Phone-Screenshots/tune-bells.webp',
-                'Phone-Screenshots/tune-pace.webp'
+                'assets/iphone/tune-sounds.webp',
+                'assets/iphone/tune-bells.webp',
+                'assets/iphone/tune-pace.webp'
             ];
             const alts = [
                 'Calma Background Sounds customization',
@@ -1333,9 +1514,74 @@
             }
         }
 
+        // Discourage saving videos: no right-click menu, no download/PiP/remote-playback options
+        document.querySelectorAll('video').forEach((v) => {
+            v.setAttribute('controlsList', 'nodownload noremoteplayback');
+            v.setAttribute('disablePictureInPicture', '');
+            v.setAttribute('disableRemotePlayback', '');
+            v.addEventListener('contextmenu', (e) => e.preventDefault());
+        });
+        // The spinner/sound overlays sit above the video and would otherwise expose the menu
+        document.querySelectorAll('.video-spinner, .hero-sound').forEach((el) => {
+            el.addEventListener('contextmenu', (e) => e.preventDefault());
+        });
+
+        // Hero video sound: muted by default, button toggles, slider sets volume
+        (function () {
+            const v = document.getElementById('hero-video');
+            const btn = document.getElementById('hero-sound-btn');
+            const slider = document.getElementById('hero-volume');
+            if (!v || !btn || !slider) return;
+            const box = btn.parentElement;
+            const sync = () => {
+                const on = !v.muted && v.volume > 0;
+                box.classList.toggle('is-unmuted', on);
+                btn.setAttribute('aria-pressed', String(on));
+                btn.setAttribute('aria-label', on ? 'Mute video' : 'Unmute video');
+            };
+            v.muted = true;
+            v.volume = parseFloat(slider.value);
+            btn.addEventListener('click', () => {
+                if (v.muted || v.volume === 0) {
+                    v.muted = false;
+                    if (v.volume === 0) { v.volume = 0.6; slider.value = 0.6; }
+                } else {
+                    v.muted = true;
+                }
+                sync();
+            });
+            slider.addEventListener('input', () => {
+                const val = parseFloat(slider.value);
+                v.volume = val;
+                v.muted = val === 0;
+                sync();
+            });
+            v.addEventListener('volumechange', sync);
+            sync();
+        })();
+
         // Breathing shapes: load each video when near the viewport, play on load, pause when off-screen
         (function () {
             const vids = document.querySelectorAll('video.shape-video');
+            // Loading spinner shown over each video until it has data to display
+            vids.forEach((v) => {
+                const wrap = v.parentElement;
+                wrap.classList.add('relative');
+                const spinner = document.createElement('div');
+                spinner.className = 'video-spinner';
+                spinner.setAttribute('role', 'status');
+                spinner.setAttribute('aria-label', 'Loading video');
+                wrap.appendChild(spinner);
+                // Initial load only: once the first frame is ready the spinner is removed for good
+                // (waiting/stalled also fire on loop restarts and normal buffering, which caused flicker)
+                const hide = () => {
+                    spinner.classList.add('is-hidden');
+                    setTimeout(() => spinner.remove(), 300);
+                };
+                ['loadeddata', 'canplay', 'playing', 'error'].forEach((ev) =>
+                    v.addEventListener(ev, hide, { once: true }));
+                if (v.readyState >= 2) hide();
+            });
             const load = (v) => {
                 if (!v.dataset.src) return;
                 v.src = v.dataset.src;
