@@ -229,49 +229,49 @@
             theme: {
                 extend: {
                     colors: {
-                        "on-primary-fixed-variant": "#004c6e",
-                        "primary-fixed": "#bae6fd",
-                        "surface-container-highest": "#bae6fd",
-                        "tertiary-fixed-dim": "#38bdf8",
-                        "background": "#e0f2fe",
+                        "on-primary-fixed-variant": "#00378f",
+                        "primary-fixed": "#c2dcff",
+                        "surface-container-highest": "#8db9fb",
+                        "tertiary-fixed-dim": "#3299fd",
+                        "background": "#b8d5ff",
                         "inverse-surface": "#1e293b",
-                        "tertiary": "#0284c7",
-                        "surface-variant": "#cbeafe",
-                        "secondary-fixed-dim": "#7dd3fc",
-                        "surface-tint": "#0284c7",
+                        "tertiary": "#0d76f2",
+                        "surface-variant": "#c6dcfe",
+                        "secondary-fixed-dim": "#7dbcfd",
+                        "surface-tint": "#0d76f2",
                         "on-error": "#ffffff",
-                        "on-secondary-container": "#0369a1",
-                        "on-background": "#0c2840",
-                        "surface-dim": "#b9e3fc",
+                        "on-secondary-container": "#0a4fc0",
+                        "on-background": "#0b2447",
+                        "surface-dim": "#a3c6fc",
                         "on-primary": "#ffffff",
                         "error-container": "#ffdad6",
-                        "surface": "#e0f2fe",
+                        "surface": "#b8d5ff",
                         "error": "#ba1a1a",
                         "outline": "#64748b",
-                        "on-primary-container": "#0369a1",
-                        "surface-container-low": "#d4edfd",
+                        "on-primary-container": "#0a4fc0",
+                        "surface-container-low": "#c2d9ff",
                         "outline-variant": "#93c5fd",
-                        "on-primary-fixed": "#082f49",
-                        "surface-container-high": "#c3e4fc",
-                        "surface-container": "#cbe8fd",
-                        "secondary-container": "#38bdf8",
+                        "on-primary-fixed": "#0a2a5e",
+                        "surface-container-high": "#9fc4fd",
+                        "surface-container": "#adcdff",
+                        "secondary-container": "#3299fd",
                         "on-surface-variant": "#334155",
-                        "primary-container": "#0284c7",
-                        "on-tertiary-fixed": "#082f49",
-                        "primary": "#0284c7",
+                        "primary-container": "#0d76f2",
+                        "on-tertiary-fixed": "#0a2a5e",
+                        "primary": "#0d76f2",
                         "on-secondary": "#ffffff",
-                        "secondary-fixed": "#bae6fd",
-                        "on-secondary-fixed": "#082f49",
-                        "surface-container-lowest": "#f0f9ff",
-                        "on-tertiary-container": "#003943",
-                        "primary-fixed-dim": "#89ceff",
-                        "on-secondary-fixed-variant": "#004c69",
-                        "secondary": "#00668a",
-                        "on-tertiary-fixed-variant": "#004e5c",
-                        "inverse-primary": "#89ceff",
-                        "tertiary-fixed": "#acedff",
+                        "secondary-fixed": "#c2dcff",
+                        "on-secondary-fixed": "#0a2a5e",
+                        "surface-container-lowest": "#dcebff",
+                        "on-tertiary-container": "#002e6e",
+                        "primary-fixed-dim": "#8bbfff",
+                        "on-secondary-fixed-variant": "#00378f",
+                        "secondary": "#0a4fc0",
+                        "on-tertiary-fixed-variant": "#00378f",
+                        "inverse-primary": "#8bbfff",
+                        "tertiary-fixed": "#b8dcff",
                         "on-error-container": "#93000a",
-                        "tertiary-container": "#00aac6",
+                        "tertiary-container": "#3299fd",
                         "inverse-on-surface": "#eaf1ff",
                         "on-tertiary": "#ffffff",
                         "surface-bright": "#f8f9ff",
@@ -336,7 +336,7 @@
     </script>
 </head>
 
-<body class="min-h-screen bg-background font-body-md text-on-surface flex flex-col antialiased selection:bg-sky-100 selection:text-sky-900 overflow-x-clip w-full">
+<body class="min-h-screen bg-background font-body-md text-on-surface flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-clip w-full">
 
     <!-- Floating Pill Header -->
     <header class="fixed top-3 sm:top-5 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none w-full max-w-full">
@@ -361,7 +361,7 @@
             <!-- Right App Actions: Mobile CTA & Desktop App Store/Google Play Badges -->
             <div class="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
                 <!-- Mobile Compact CTA Button -->
-                <a class="sm:hidden inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-white text-[12px] font-semibold tracking-wide shadow-sm hover:bg-sky-600 active:scale-95 transition-all gap-1 flex-shrink-0" href="#download">
+                <a class="sm:hidden inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-white text-[12px] font-semibold tracking-wide shadow-sm hover:bg-blue-700 active:scale-95 transition-all gap-1 flex-shrink-0" href="#download">
                     <span>Get App</span>
                     <span class="material-symbols-outlined text-[15px]">arrow_downward</span>
                 </a>
@@ -379,28 +379,28 @@
         </div>
     </header>
 
-    <main class="w-full pt-28 sm:pt-32 flex-1 bg-background" id="overview">
+    <main class="w-full pt-28 sm:pt-32 flex-1 bg-[#38a6fd]" id="overview">
         <div class="flex flex-col w-full">
 
             <!-- Atmospheric Glow Backdrop -->
-            <div class="relative w-full overflow-hidden">
-                <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[54rem] h-[36rem] bg-gradient-to-b from-sky-200/40 via-surface-container-low/30 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+            <div class="relative w-full overflow-hidden bg-[#38a6fd]">
+                <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[54rem] h-[36rem] bg-gradient-to-b from-white/20 via-white/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 
                 <!-- HERO SECTION -->
-                <section class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl pt-space-2xl pb-space-3xl">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-2xl">
+                <section class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl pt-6 pb-10 sm:pt-space-2xl sm:pb-space-3xl">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 sm:gap-space-2xl">
                         
                         <!-- Left Column: Editorial Manifesto -->
                         <div class="flex-1 max-w-xl flex flex-col items-start">
-                            <h1 class="font-display-hero text-display-hero-mobile sm:text-display-hero text-on-surface tracking-tight leading-tight mb-space-sm font-semibold">
+                            <h1 class="font-display-hero text-[40px] leading-[1.05] sm:leading-tight sm:text-display-hero text-white tracking-tight mb-space-sm font-semibold">
                                 Breathwork made simple
                             </h1>
 
-                            <p class="font-headline-sm text-[18.7px] sm:text-[20.9px] text-primary font-medium mb-space-md leading-snug">
+                            <p class="font-headline-sm text-[18.7px] sm:text-[20.9px] text-white font-medium mb-space-md leading-snug">
                                 Guided breathing exercises to calm anxiety, improve focus, and help you sleep
                             </p>
 
-                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-space-xl leading-relaxed">
+                            <p class="font-body-lg text-body-lg text-white mb-space-xl leading-relaxed">
                                 Calma is a breath coach for your pocket. Whether you're new to breathwork or already meditate regularly, Calma pairs guided breathing exercises with immersive visuals and sound to help you relax, refocus, and reset.
                             </p>
 
@@ -415,25 +415,25 @@
                             </div>
 
                             <!-- Meta Specifications Strip -->
-                            <div class="grid grid-cols-3 gap-space-md pt-space-md border-t border-surface-container-high/80 w-full">
+                            <div class="grid grid-cols-3 gap-space-md pt-space-md border-t border-white/25 w-full">
                                 <div>
-                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">80+</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Sessions</div>
+                                    <div class="font-headline-sm text-headline-sm text-white font-semibold">80+</div>
+                                    <div class="font-body-sm text-body-sm text-white">Sessions</div>
                                 </div>
                                 <div>
-                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Custom</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Pacing &amp; Audio</div>
+                                    <div class="font-headline-sm text-headline-sm text-white font-semibold">Custom</div>
+                                    <div class="font-body-sm text-body-sm text-white">Pacing &amp; Audio</div>
                                 </div>
                                 <div>
-                                    <div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Zero</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Intrusive Clutter</div>
+                                    <div class="font-headline-sm text-headline-sm text-white font-semibold">Zero</div>
+                                    <div class="font-body-sm text-body-sm text-white">Intrusive Clutter</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Right Column: Hero Smartphone Hardware Mockup with Demo Video -->
                         <div class="flex-1 flex justify-center lg:justify-end">
-                            <div class="relative w-[270px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(14,165,233,0.18)] ring-1 ring-slate-800">
+                            <div class="relative w-[250px] min-[400px]:w-[270px] sm:w-[310px] rounded-[48px] bg-slate-900 p-2.5 sm:p-3 shadow-[0_24px_50px_-12px_rgba(11,99,229,0.18)] ring-1 ring-slate-800">
                                 <!-- Phone Frame Inner Bezel -->
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[38px] overflow-hidden flex flex-col border border-slate-800">
                                     <video id="hero-video" width="310" height="671" class="w-full h-full object-cover object-top block" autoplay loop muted playsinline preload="metadata" poster="assets/ipad/ipad-curved-pacer-starfield.webp">
@@ -457,29 +457,29 @@
             </div>
 
             <!-- SECTION 2: HOW IT WORKS -->
-            <section class="w-full bg-surface-container-lowest py-space-3xl border-y border-surface-container-high/50" id="how-it-works">
+            <section class="w-full bg-surface-container-lowest py-12 sm:py-space-3xl border-y border-surface-container-high/50" id="how-it-works">
                 <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
-                    <div class="text-center max-w-2xl mx-auto mb-space-2xl">
-                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-space-2xl">
+                        <h2 class="font-headline-lg text-[38px] leading-[1.1] sm:text-[56px] text-on-surface tracking-tight mb-space-sm font-semibold">
                             How it works
                         </h2>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-space-lg">
                         <!-- Step 1: Choose a session -->
-                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                        <div class="p-5 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
                             <div class="mb-5">
                                 <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
                                     01
                                 </div>
                                 <h3 class="font-headline-sm text-[19px] text-on-surface font-semibold mb-1.5">Choose a session</h3>
                                 <p class="font-body-md text-[14.85px] text-on-surface-variant leading-relaxed">
-                                    Pick from quick resets for anxiety, deeper relaxation routines, or focus rhythms based on how you feel
+                                    Pick a session based on what you need, whether it's sleep, anxiety, calm, focus, or panic
                                 </p>
                             </div>
                             
                             <!-- Phone Mockup Preview -->
-                            <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                            <div class="relative mx-auto w-[200px] min-[400px]:w-[220px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
                                     <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Choose a Session Explore Screen" class="w-full h-full object-cover object-top" src="assets/iphone/choose-session.webp" />
                                 </div>
@@ -487,7 +487,7 @@
                         </div>
 
                         <!-- Step 2: Follow the pacer -->
-                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                        <div class="p-5 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
                             <div class="mb-5">
                                 <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
                                     02
@@ -499,7 +499,7 @@
                             </div>
                             
                             <!-- Phone Mockup Preview -->
-                            <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                            <div class="relative mx-auto w-[200px] min-[400px]:w-[220px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                 <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
                                     <img width="240" height="520" loading="lazy" decoding="async" alt="Calma Follow the breathing pacer wave" class="w-full h-full object-cover object-top" src="assets/iphone/follow-pacer.webp" />
                                 </div>
@@ -507,7 +507,7 @@
                         </div>
 
                         <!-- Step 3: Tune the sound & pace -->
-                        <div class="p-6 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
+                        <div class="p-5 sm:p-7 rounded-3xl bg-surface-container-low/60 border border-surface-container-high/60 flex flex-col justify-between hover:border-primary/30 transition-all shadow-xs">
                             <div class="mb-5">
                                 <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary font-bold text-headline-sm shadow-xs border border-surface-container-high/60 mb-3">
                                     03
@@ -520,7 +520,7 @@
                             
                             <!-- Phone Mockup Preview that auto-cycles every 2 seconds -->
                             <div class="flex flex-col items-center">
-                                <div class="relative mx-auto w-[230px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
+                                <div class="relative mx-auto w-[200px] min-[400px]:w-[220px] sm:w-[240px] rounded-[38px] bg-slate-900 p-2 shadow-lg ring-1 ring-slate-800">
                                     <div class="w-full aspect-[9/19.5] bg-slate-950 rounded-[30px] overflow-hidden flex flex-col border border-slate-800/80">
                                         <img id="step3-phone-img" width="240" height="520" loading="lazy" decoding="async" alt="Calma Background Sounds customization" class="w-full h-full object-cover object-top transition-opacity duration-300" src="assets/iphone/tune-sounds.webp" />
                                     </div>
@@ -532,95 +532,95 @@
             </section>
 
             <!-- SECTION: BREATHING SHAPES -->
-            <section class="w-full bg-surface-container-lowest py-space-3xl border-y border-surface-container-high/50" id="breathing-shapes">
+            <section class="w-full bg-[#38a6fd] py-space-3xl border-y border-white/10" id="breathing-shapes">
                 <div class="max-w-[80rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
                     <div class="text-center px-2 max-w-2xl mx-auto mb-space-2xl">
-                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                        <h2 class="font-headline-lg text-[38px] leading-[1.1] sm:text-[56px] text-white tracking-tight mb-space-sm font-semibold">
                             Breathing shapes
                         </h2>
-                        <p class="font-body-md text-[16.5px] leading-[24px] text-on-surface-variant">
+                        <p class="font-body-md text-[16.5px] leading-[24px] text-white">
                             Instead of trying to count seconds in your head (which can cause mild stress or distraction if you lose track), your eyes handle the timing, freeing your brain to focus on relaxation
                         </p>
                     </div>
                     <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mx-auto">
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Sleep 4-7-8 breathing shape animation" data-src="assets/videos/shape-curved-lines.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Curved Lines</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Curved Lines</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Featured 3-7 breathing shape animation" data-src="assets/videos/shape-straight-lines.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Straight Lines</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Straight Lines</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Deep Release breathing shape animation" data-src="assets/videos/shape-vertical-line.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Vertical Line</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Vertical Line</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Twilight Drift breathing shape animation" data-src="assets/videos/shape-square.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Square</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Square</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Quick Calm breathing shape animation" data-src="assets/videos/shape-triangle.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Triangle</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Triangle</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Breath Free breathing shape animation" data-src="assets/videos/shape-rectangle.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Rectangle</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Rectangle</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Nervous System Reset breathing shape animation" data-src="assets/videos/shape-heart.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Heart</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Heart</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tranquil breathing shape animation" data-src="assets/videos/shape-semi-circle.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Semi Circle</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Semi Circle</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Tai Chi breathing shape animation" data-src="assets/videos/shape-octagon.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Octagon</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Octagon</p>
                             </div>
                         </div>
-                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl bg-surface-container-lowest flex flex-col">
+                        <div class="w-[calc((100%-0.75rem)/2)] sm:w-[calc((100%-2rem)/3)] xl:w-[calc((100%-4rem)/5)] p-2 rounded-2xl flex flex-col">
                             <div class="rounded-xl overflow-hidden bg-slate-950 aspect-[9/16]">
                                 <video class="shape-video w-full h-full object-cover block" muted loop playsinline autoplay preload="none" aria-label="Multi polygon breathing shape animation" data-src="assets/videos/shape-multi-polygon.webm"></video>
                             </div>
                             <div class="pt-3 pb-1.5 px-0.5 text-center">
-                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-on-surface font-semibold tracking-normal">Multi polygon</p>
+                                <p class="text-[18px] xl:text-[20.4px] leading-tight text-white font-semibold tracking-normal">Multi polygon</p>
                             </div>
                         </div>
                     </div>
@@ -631,7 +631,7 @@
             <section class="w-full bg-surface-container-low/70 py-space-3xl border-b border-surface-container-high/50" id="gallery">
                 <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
                     <div class="text-center max-w-2xl mx-auto mb-space-2xl">
-                        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                        <h2 class="font-headline-lg text-[38px] leading-[1.1] sm:text-[56px] text-on-surface tracking-tight mb-space-sm font-semibold">
                             Designed to help you relax
                         </h2>
                         <p class="font-body-md text-[16.5px] leading-[24px] text-on-surface-variant">
@@ -846,21 +846,22 @@
 
 
             <!-- SECTION 6: AUTHENTIC USER REVIEWS -->
+            <div class="w-full bg-[#38a6fd]">
             <section class="max-w-[83rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl py-space-3xl" id="reviews">
                 <div class="text-center max-w-2xl mx-auto mb-space-2xl">
-                    <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-sm font-semibold">
+                    <h2 class="font-headline-lg text-[38px] leading-[1.1] sm:text-[56px] text-white tracking-tight mb-space-sm font-semibold">
                         What people are saying
                     </h2>
-                    <p class="font-body-md text-[16.5px] leading-[24px] text-on-surface-variant">
+                    <p class="font-body-md text-[16.5px] leading-[24px] text-white">
                         Real feedback from practitioners and everyday users using Calma to cultivate steady calm
                     </p>
                 </div>
 
                 <!-- Infinite Marquee Scrolling Container -->
-                <div class="relative w-full overflow-hidden flex flex-col gap-6 py-2">
+                <div class="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden flex flex-col gap-6 py-2">
                     <!-- Left and Right Gradient Mask for Smooth Fade -->
-                    <div class="absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-                    <div class="absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-[#38a6fd] to-transparent z-10 pointer-events-none"></div>
+                    <div class="absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-[#38a6fd] to-transparent z-10 pointer-events-none"></div>
 
                     <!-- Row 1: Leftward Infinite Marquee -->
                     <div class="overflow-hidden w-full">
@@ -871,7 +872,7 @@
                                 <div>
                                     <div class="flex items-center justify-between mb-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-9 h-9 rounded-full bg-sky-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
                                                 V
                                             </div>
                                             <div>
@@ -1007,6 +1008,84 @@
                                     </div>
                                     <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                                         "I started using this app once I wake up , play 'lock me in' for like 5-10 min and then start my day. I would prefer if you could bring an alarm system which will notify me and go straight into the session. Also users should be also able to set a 10 min session so that I don't need to set the timer every time"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 12: Abhir4m -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Abhir4m</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "No complicated setup or overwhelming features. Just straightforward breathing exercises with lovely visuals. I've really enjoyed exploring the different sessions."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 13: niwsa91 -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                N
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">niwsa91</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "The breathing exercises are simple, calming, and perfect for reducing stress"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 14: Fitness Coach Arun -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                F
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Fitness Coach Arun</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Really glad I found this. I mainly use it in the evening and before going to sleep. The visual breathing guide makes it much easier for me to stay focused"
                                     </p>
                                 </div>
                             </div>
@@ -1017,7 +1096,7 @@
                                 <div>
                                     <div class="flex items-center justify-between mb-3">
                                         <div class="flex items-center gap-3">
-                                            <div class="w-9 h-9 rounded-full bg-sky-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
                                                 V
                                             </div>
                                             <div>
@@ -1153,6 +1232,84 @@
                                     </div>
                                     <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                                         "I started using this app once I wake up , play 'lock me in' for like 5-10 min and then start my day. I would prefer if you could bring an alarm system which will notify me and go straight into the session. Also users should be also able to set a 10 min session so that I don't need to set the timer every time"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 12: Abhir4m -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                A
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Abhir4m</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "No complicated setup or overwhelming features. Just straightforward breathing exercises with lovely visuals. I've really enjoyed exploring the different sessions."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 13: niwsa91 -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                N
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">niwsa91</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "The breathing exercises are simple, calming, and perfect for reducing stress"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 14: Fitness Coach Arun -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                F
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Fitness Coach Arun</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Really glad I found this. I mainly use it in the evening and before going to sleep. The visual breathing guide makes it much easier for me to stay focused"
                                     </p>
                                 </div>
                             </div>
@@ -1279,6 +1436,113 @@
                                 </div>
                             </div>
 
+                            <!-- Review 10: Google Play User -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                G
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Google Play User</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Much easier than trying to count the seconds myself. I just follow the breathing lines screen and let the app do the timing."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 15: Suryagopalvava -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                S
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Suryagopalvava</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I like this app because it offers a variety of breathing sessions based on proven breathing patterns with effective results. I would like to see a few more breathing exercises added."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 16: Medhuie -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                M
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Medhuie</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "The app is really good and helps relax, and is quite easy to use"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 17: malavika21 -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                M
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">malavika21</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Honestly one of the better breathing apps I've tried. Everything feels straightforward"
+                                    </p>
+                                </div>
+                            </div>
+
                             <!-- Duplicate Set 2 (for seamless loop) -->
                             <!-- Review 6: bindu menon -->
                             <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0" aria-hidden="true">
@@ -1395,72 +1659,225 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <!-- Review 10: Google Play User -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                G
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Google Play User</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 512 512">
+                                                        <path fill="#4285F4" d="M47.1 27.2C40.6 34.3 36.8 45.4 36.8 60.1v391.8c0 14.7 3.8 25.8 10.3 32.9l1.8 1.8L270 265.4v-4.8L48.9 25.4l-1.8 1.8z"/>
+                                                        <path fill="#FBBC04" d="M343.8 339.2l-73.8-73.8v-4.8l73.8-73.8 2.2 1.3 87.5 49.7c25 14.2 25 37.4 0 51.6l-87.5 49.7-2.2 1.3z"/>
+                                                        <path fill="#EA4335" d="M346 337.9L270 261.9 47.1 484.8c8.2 8.7 21.8 9.8 36.9 1.2l262-148.1z"/>
+                                                        <path fill="#34A853" d="M346 174.1L84 26c-15.1-8.6-28.7-7.5-36.9 1.2L270 250.1 346 174.1z"/>
+                                                    </svg>
+                                                    Google Play
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Much easier than trying to count the seconds myself. I just follow the breathing lines screen and let the app do the timing."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 15: Suryagopalvava -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                S
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Suryagopalvava</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "I like this app because it offers a variety of breathing sessions based on proven breathing patterns with effective results. I would like to see a few more breathing exercises added."
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 16: Medhuie -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-primary font-bold flex items-center justify-center text-[13px]">
+                                                M
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">Medhuie</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "The app is really good and helps relax, and is quite easy to use"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Review 17: malavika21 -->
+                            <div class="w-[320px] sm:w-[360px] p-6 rounded-2xl bg-surface-container-lowest border border-surface-container-high/60 shadow-xs flex flex-col justify-between flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-[13px]">
+                                                M
+                                            </div>
+                                            <div>
+                                                <div class="font-headline-sm text-[15px] font-semibold text-on-surface">malavika21</div>
+                                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200/60 text-[11px] font-medium text-slate-600 mt-0.5">
+                                                    <svg class="w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                                                        <path fill="#0f172a" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                                                    </svg>
+                                                    App Store
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="text-amber-400 text-sm tracking-tighter">★★★★★</div>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Honestly one of the better breathing apps I've tried. Everything feels straightforward"
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="w-full bg-[#dcf0fa] py-14 border-t border-[#b9e2f8]" id="download">
-        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
-            <!-- Social Media Follow & Subscribe Icon Buttons -->
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/profile.php?id=61594067279024" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Facebook" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#1877F2] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                </a>
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@calmabreathing" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Calma on YouTube" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#FF0000] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@calma_app?lang=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on TikTok" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-black border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                    </svg>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/calmabreathe/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Instagram" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#E4405F] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <!-- Pinterest -->
-                <a href="https://in.pinterest.com/calma_app/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Pinterest" class="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-slate-700 hover:text-[#E60023] border border-[#93c5fd]/50 shadow-xs flex items-center justify-center transition-all hover:scale-105 hover:shadow-sm">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.62-5.373-11.987-12-11.987z"/>
-                    </svg>
-                </a>
+    <div class="bg-[#38a6fd]">
+    <footer class="w-full bg-gradient-to-b from-[#0a3a8f] to-[#061f55] text-white rounded-t-[2rem] sm:rounded-t-[3rem] pt-10 sm:pt-16 pb-6 sm:pb-8" id="download">
+        <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-9 md:gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+                <!-- Brand + Download -->
+                <div class="col-span-2 md:col-span-1 flex flex-col items-start">
+                    <a class="flex items-center gap-3 mb-4" href="#">
+                        <img alt="Calma: Breathcoach Logo" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/25" src="playstore-app-icon-vibrant-curved.png" />
+                        <span class="font-headline-sm text-[20px] font-bold tracking-tight">Calma : BreathCoach</span>
+                    </a>
+                    <p class="text-[15px] leading-relaxed text-blue-100/90 max-w-sm mb-6">
+                        Guided breathing exercises to calm anxiety, improve focus, and help you sleep.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" rel="noopener noreferrer" target="_blank">
+                            <img alt="Download on the App Store" width="135" height="44" class="h-11 w-auto" src="app-store-badge.svg" />
+                        </a>
+                        <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" rel="noopener noreferrer" target="_blank">
+                            <img alt="Get it on Google Play" width="135" height="44" class="h-11 w-auto" src="google-play-badge.svg" />
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore -->
+                <nav aria-label="Footer">
+                    <h3 class="text-[12px] font-semibold uppercase tracking-[0.14em] text-blue-200/80 mb-5">Explore</h3>
+                    <ul class="space-y-3 text-[15px]">
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="#how-it-works">How It Works</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="#breathing-shapes">Breathing Shapes</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="#gallery">App Gallery</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="#reviews">Reviews</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Follow -->
+                <div>
+                    <h3 class="text-[12px] font-semibold uppercase tracking-[0.14em] text-blue-200/80 mb-5">Follow</h3>
+                    <ul class="grid grid-cols-3 gap-3 md:grid-cols-2 md:gap-x-6 md:gap-y-3">
+                        <li>
+                            <a href="https://www.instagram.com/calmabreathe/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Instagram" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                                <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
+                                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </span>
+                                <span class="hidden md:inline text-[14px] font-medium">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@calmabreathing" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Calma on YouTube" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                                <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
+                                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                </span>
+                                <span class="hidden md:inline text-[14px] font-medium">YouTube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@calma_app?lang=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on TikTok" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                                <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
+                                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                                    </svg>
+                                </span>
+                                <span class="hidden md:inline text-[14px] font-medium">TikTok</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61594067279024" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Facebook" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                                <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
+                                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </span>
+                                <span class="hidden md:inline text-[14px] font-medium">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://in.pinterest.com/calma_app/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Pinterest" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
+                                <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
+                                    <svg class="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.62-5.373-11.987-12-11.987z"/>
+                                    </svg>
+                                </span>
+                                <span class="hidden md:inline text-[14px] font-medium">Pinterest</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- App Store Badges -->
-            <div class="flex items-center justify-center gap-4 sm:gap-5 mb-5">
-                <a class="hover:opacity-90 transition-opacity" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" rel="noopener noreferrer" target="_blank">
-                    <img alt="Download on the App Store" width="135" height="44" class="h-11 sm:h-12 w-auto" src="app-store-badge.svg" />
-                </a>
-                <a class="hover:opacity-90 transition-opacity" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" rel="noopener noreferrer" target="_blank">
-                    <img alt="Get it on Google Play" width="135" height="44" class="h-11 sm:h-12 w-auto" src="google-play-badge.svg" />
-                </a>
-            </div>
-
-            <!-- Copyright Notice -->
-            <p class="text-[13px] text-slate-600 mb-2.5 font-normal">
-                Copyright &copy; 2026 Calma: Breathcoach
-            </p>
-
-            <!-- Policy Links -->
-            <div class="flex items-center justify-center gap-4 text-[13px] font-normal">
-                <a class="text-[#f97316] hover:underline" href="privacy.html">Privacy Policy</a>
-                <a class="text-[#f97316] hover:underline" href="terms/index.html">Terms of Service</a>
+            <!-- Bottom bar -->
+            <div class="mt-9 sm:mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-blue-200/80">
+                <p>Copyright &copy; 2026 Calma: Breathcoach</p>
+                <div class="flex items-center gap-5">
+                    <a class="hover:text-white transition-colors" href="privacy.html">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="terms/index.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
+    </div>
 
     <script>
         // Auto-change step 3 phone customization screenshot every 2 seconds
@@ -1619,6 +2036,59 @@
 
             animatedSections.forEach(section => perfObserver.observe(section));
         }
+    </script>
+    <!-- Back to top: appears only when the visitor reaches the bottom of the page -->
+    <style>
+        .back-to-top {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 60;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 50%;
+            background: #0d76f2;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(6, 31, 85, .35);
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: opacity .25s ease, transform .25s ease, background-color .2s ease;
+        }
+        .back-to-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+        .back-to-top:hover { background: #0b63e5; }
+        .back-to-top:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+        @media (min-width: 640px) { .back-to-top { right: 24px; bottom: 24px; } }
+    </style>
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            var ticking = false;
+            function update() {
+                ticking = false;
+                var doc = document.documentElement;
+                var atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 160;
+                var scrollable = doc.scrollHeight > window.innerHeight * 1.5;
+                btn.classList.toggle('is-visible', atBottom && scrollable);
+            }
+            function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            btn.addEventListener('click', function () {
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+            });
+            update();
+        })();
     </script>
 </body>
 
