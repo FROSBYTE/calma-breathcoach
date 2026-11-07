@@ -4,44 +4,75 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-    <title>Calma : BreathCoach</title>
+    <title>Calma : Breath Coach – Guided Breathing App</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="playstore-app-icon-vibrant-curved.png" />
-    <link rel="apple-touch-icon" href="playstore-app-icon-vibrant-curved.png" />
+    <link rel="icon" type="image/webp" href="playstore-app-icon-vibrant-curved.webp" />
+    <link rel="apple-touch-icon" href="playstore-app-icon-vibrant-curved.webp" />
 
     <!-- Performance & Preload Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="playstore-app-icon-vibrant-curved.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="playstore-app-icon-vibrant-curved.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="assets/ipad/ipad-curved-pacer-starfield.webp" type="image/webp" fetchpriority="high" />
 
     <!-- SEO & Social Sharing (Open Graph & Twitter) -->
-    <meta name="description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep 80+ sessions, custom pacing, immersive visuals and sound." />
-    <link rel="canonical" href="https://frosbyte.github.io/calma-breathcoach/" />
+    <meta name="description" content="Guided breathing made simple. Calma is a breath coach app with 80+ sessions for anxiety, panic relief, focus and sleep. On Google Play and the App Store." />
+    <link rel="canonical" href="https://calmabreathcoach.frosbytedev.com/" />
+
+    <!-- Structured data: MobileApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Calma : Breath Coach",
+      "alternateName": ["Calma Breath Coach", "Calma BreathCoach"],
+      "description": "Calma is a guided breath coach app with 80+ breathing sessions for anxiety, panic relief, focus and sleep, with custom pacing, immersive visuals and sound.",
+      "url": "https://calmabreathcoach.frosbytedev.com/",
+      "image": "https://calmabreathcoach.frosbytedev.com/meta-preview.jpg",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "ANDROID, IOS",
+      "inLanguage": "en",
+      "installUrl": [
+        "https://play.google.com/store/apps/details?id=com.frosbytearena.calma",
+        "https://apps.apple.com/us/app/calma-breath-coach/id6762740971"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "FROSBYTE ARENA",
+        "url": "https://calmabreathcoach.frosbytedev.com/",
+        "sameAs": [
+          "https://www.instagram.com/calmabreathe/",
+          "https://www.youtube.com/@calmabreathing",
+          "https://www.tiktok.com/@calma_app",
+          "https://www.facebook.com/profile.php?id=61594067279024",
+          "https://in.pinterest.com/calma_app/"
+        ]
+      }
+    }
+    </script>
 
     <!-- Open Graph / Facebook / WhatsApp / LinkedIn / Discord -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://frosbyte.github.io/calma-breathcoach/" />
-    <meta property="og:site_name" content="Calma : BreathCoach" />
-    <meta property="og:title" content="Calma : BreathCoach" />
-    <meta property="og:description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep 80+ sessions, custom pacing, immersive visuals and sound." />
-    <meta property="og:image" content="https://frosbyte.github.io/calma-breathcoach/meta-preview.jpg" />
-    <meta property="og:image:secure_url" content="https://frosbyte.github.io/calma-breathcoach/meta-preview.jpg" />
+    <meta property="og:url" content="https://calmabreathcoach.frosbytedev.com/" />
+    <meta property="og:site_name" content="Calma : Breath Coach" />
+    <meta property="og:title" content="Calma : Breath Coach – Guided Breathing App" />
+    <meta property="og:description" content="Guided breathing made simple. Calma is a breath coach app with 80+ sessions for anxiety, panic relief, focus and sleep. On Google Play and the App Store." />
+    <meta property="og:image" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
+    <meta property="og:image:secure_url" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1254" />
     <meta property="og:image:height" content="1254" />
-    <meta property="og:image:alt" content="Calma BreathCoach App Icon" />
+    <meta property="og:image:alt" content="Calma : Breath Coach App Icon" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Calma : BreathCoach" />
-    <meta name="twitter:description" content="Breathwork made simple: Guided breathing exercises to calm anxiety, improve focus, and help you sleep" />
-    <meta name="twitter:image" content="https://frosbyte.github.io/calma-breathcoach/meta-preview.jpg" />
+    <meta name="twitter:title" content="Calma : Breath Coach – Guided Breathing App" />
+    <meta name="twitter:description" content="Guided breathing made simple. Calma is a breath coach app with 80+ sessions for anxiety, panic relief, focus and sleep. On Google Play and the App Store." />
+    <meta name="twitter:image" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
 
     <!-- Fonts with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
     <style>
         @layer base {
@@ -343,10 +374,10 @@
         <div class="w-full max-w-[72rem] mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-surface/90 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
             <!-- Logo -->
             <a class="flex items-center gap-2 sm:gap-3.5 group flex-shrink-0 min-w-0" href="#">
-                <img alt="Calma: Breathcoach Logo" width="48" height="48" class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover shadow-sm border border-surface-container-high/90 flex-shrink-0 transition-transform group-hover:scale-105" src="playstore-app-icon-vibrant-curved.png" />
+                <img alt="Calma : Breath Coach Logo" width="48" height="48" class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover shadow-sm border border-surface-container-high/90 flex-shrink-0 transition-transform group-hover:scale-105" src="playstore-app-icon-vibrant-curved.webp" />
                 <span class="font-headline-sm text-[15px] sm:text-[18px] tracking-tight text-on-surface group-hover:text-primary transition-colors font-bold truncate">
                     <span class="sm:hidden">Calma</span>
-                    <span class="hidden sm:inline">Calma : BreathCoach</span>
+                    <span class="hidden sm:inline">Calma : Breath Coach</span>
                 </span>
             </a>
 
@@ -363,16 +394,16 @@
                 <!-- Mobile Compact CTA Button -->
                 <a class="sm:hidden inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-white text-[12px] font-semibold tracking-wide shadow-sm hover:bg-blue-700 active:scale-95 transition-all gap-1 flex-shrink-0" href="#download">
                     <span>Get App</span>
-                    <span class="material-symbols-outlined text-[15px]">arrow_downward</span>
+                    <svg class="w-[15px] h-[15px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
                 </a>
 
                 <!-- Desktop Store Badges -->
                 <div class="hidden sm:flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
                     <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
-                        <img alt="Download on the App Store" width="105" height="32" class="h-8 sm:h-9 w-auto" src="app-store-badge.svg" />
+                        <img alt="Download on the App Store" width="105" height="32" class="h-8 sm:h-9 w-auto" src="assets/brand/app-store-badge.svg" />
                     </a>
                     <a class="hover:opacity-90 transition-opacity active:scale-[0.98] flex-shrink-0" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
-                        <img alt="Get it on Google Play" width="105" height="32" class="h-8 sm:h-9 w-auto" src="google-play-badge.svg" />
+                        <img alt="Get it on Google Play" width="105" height="32" class="h-8 sm:h-9 w-auto" src="assets/brand/google-play-badge.svg" />
                     </a>
                 </div>
             </div>
@@ -393,7 +424,7 @@
                         <!-- Left Column: Editorial Manifesto -->
                         <div class="flex-1 max-w-xl flex flex-col items-start">
                             <h1 class="font-display-hero text-[40px] leading-[1.05] sm:leading-tight sm:text-display-hero text-white tracking-tight mb-space-sm font-semibold">
-                                Breathwork made simple
+                                Guided Breathing made simple
                             </h1>
 
                             <p class="font-headline-sm text-[18.7px] sm:text-[20.9px] text-white font-medium mb-space-md leading-snug">
@@ -407,10 +438,10 @@
                             <!-- Official App Store Download Badges -->
                             <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto mb-space-xl">
                                 <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" target="_blank" rel="noopener noreferrer">
-                                    <img alt="Download on the App Store" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="app-store-badge.svg" />
+                                    <img alt="Download on the App Store" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="assets/brand/app-store-badge.svg" />
                                 </a>
                                 <a class="hover:opacity-90 transition-opacity active:scale-[0.985]" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" target="_blank" rel="noopener noreferrer">
-                                    <img alt="Get it on Google Play" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="google-play-badge.svg" />
+                                    <img alt="Get it on Google Play" width="135" height="40" class="h-10 sm:h-11 md:h-12 w-auto" src="assets/brand/google-play-badge.svg" />
                                 </a>
                             </div>
 
@@ -641,11 +672,11 @@
                         <!-- Device Switcher Toggle Buttons (Touch-Optimized) -->
                         <div class="inline-flex items-center p-1.5 rounded-full bg-surface-container-high/60 border border-surface-container-highest mt-6 shadow-xs">
                             <button type="button" id="deviceBtnIPhone" onclick="switchGalleryDevice('iphone')" class="px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all bg-primary text-white shadow-xs flex items-center gap-1.5 active:scale-95">
-                                <span class="material-symbols-outlined text-[17px] sm:text-[16px]">smartphone</span>
+                                <svg class="w-[17px] h-[17px] sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2" width="11" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
                                 <span>Phone</span>
                             </button>
                             <button type="button" id="deviceBtnIPad" onclick="switchGalleryDevice('ipad')" class="px-6 sm:px-5 py-2 sm:py-1.5 min-h-[40px] rounded-full text-[13.5px] sm:text-[13px] font-semibold transition-all text-on-surface-variant hover:text-primary flex items-center gap-1.5 active:scale-95">
-                                <span class="material-symbols-outlined text-[17px] sm:text-[16px]">tablet_mac</span>
+                                <svg class="w-[17px] h-[17px] sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
                                 <span>Tablet</span>
                             </button>
                         </div>
@@ -1782,18 +1813,18 @@
                 <!-- Brand + Download -->
                 <div class="col-span-2 md:col-span-1 flex flex-col items-start">
                     <a class="flex items-center gap-3 mb-4" href="#">
-                        <img alt="Calma: Breathcoach Logo" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/25" src="playstore-app-icon-vibrant-curved.png" />
-                        <span class="font-headline-sm text-[20px] font-bold tracking-tight">Calma : BreathCoach</span>
+                        <img alt="Calma : Breath Coach Logo" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/25" src="playstore-app-icon-vibrant-curved.webp" />
+                        <span class="font-headline-sm text-[20px] font-bold tracking-tight">Calma : Breath Coach</span>
                     </a>
                     <p class="text-[15px] leading-relaxed text-blue-100/90 max-w-sm mb-6">
                         Guided breathing exercises to calm anxiety, improve focus, and help you sleep.
                     </p>
                     <div class="flex flex-wrap items-center gap-3">
                         <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://apps.apple.com/us/app/calma-breath-coach/id6762740971" rel="noopener noreferrer" target="_blank">
-                            <img alt="Download on the App Store" width="135" height="44" class="h-11 w-auto" src="app-store-badge.svg" />
+                            <img alt="Download on the App Store" width="135" height="44" class="h-11 w-auto" src="assets/brand/app-store-badge.svg" />
                         </a>
                         <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1" rel="noopener noreferrer" target="_blank">
-                            <img alt="Get it on Google Play" width="135" height="44" class="h-11 w-auto" src="google-play-badge.svg" />
+                            <img alt="Get it on Google Play" width="135" height="44" class="h-11 w-auto" src="assets/brand/google-play-badge.svg" />
                         </a>
                     </div>
                 </div>
@@ -1869,9 +1900,9 @@
 
             <!-- Bottom bar -->
             <div class="mt-9 sm:mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-blue-200/80">
-                <p>Copyright &copy; 2026 Calma: Breathcoach</p>
+                <p>Copyright &copy; 2026 Calma : Breath Coach</p>
                 <div class="flex items-center gap-5">
-                    <a class="hover:text-white transition-colors" href="privacy.html">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="privacy/">Privacy Policy</a>
                     <a class="hover:text-white transition-colors" href="terms/index.html">Terms of Service</a>
                 </div>
             </div>
