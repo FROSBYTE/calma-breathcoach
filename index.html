@@ -30,7 +30,7 @@
       "alternateName": ["Calma Breath Coach", "Calma BreathCoach"],
       "description": "Calma is a guided breath coach app with 80+ breathing sessions for anxiety, panic relief, focus and sleep, with custom pacing, immersive visuals and sound.",
       "url": "https://calmabreathcoach.frosbytedev.com/",
-      "image": "https://calmabreathcoach.frosbytedev.com/meta-preview.jpg",
+      "image": "https://calmabreathcoach.frosbytedev.com/assets/meta-preview-wide.jpg",
       "applicationCategory": "HealthApplication",
       "operatingSystem": "ANDROID, IOS",
       "inLanguage": "en",
@@ -59,18 +59,18 @@
     <meta property="og:site_name" content="Calma : Breath Coach" />
     <meta property="og:title" content="Calma : Breath Coach – Guided Breathing App" />
     <meta property="og:description" content="Guided breathing made simple. Calma is a breath coach app with 80+ sessions for anxiety, panic relief, focus and sleep. On Google Play and the App Store." />
-    <meta property="og:image" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
-    <meta property="og:image:secure_url" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
+    <meta property="og:image" content="https://calmabreathcoach.frosbytedev.com/assets/meta-preview-wide.jpg" />
+    <meta property="og:image:secure_url" content="https://calmabreathcoach.frosbytedev.com/assets/meta-preview-wide.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1254" />
-    <meta property="og:image:height" content="1254" />
-    <meta property="og:image:alt" content="Calma : Breath Coach App Icon" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta property="og:image:alt" content="Calma : Breath Coach – Breathe Better. Sleep Better." />
 
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Calma : Breath Coach – Guided Breathing App" />
     <meta name="twitter:description" content="Guided breathing made simple. Calma is a breath coach app with 80+ sessions for anxiety, panic relief, focus and sleep. On Google Play and the App Store." />
-    <meta name="twitter:image" content="https://calmabreathcoach.frosbytedev.com/meta-preview.jpg" />
+    <meta name="twitter:image" content="https://calmabreathcoach.frosbytedev.com/assets/meta-preview-wide.jpg" />
 
     <!-- Fonts with font-display: swap -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
@@ -372,7 +372,7 @@
 
     <!-- Floating Pill Header -->
     <header class="fixed top-3 sm:top-5 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none w-full max-w-full">
-        <div class="w-full max-w-[72rem] mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-surface/90 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
+        <div class="relative w-full max-w-[72rem] mx-auto flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-surface/90 backdrop-blur-xl border border-surface-container-high/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] pointer-events-auto transition-all">
             <!-- Logo -->
             <a class="flex items-center gap-2 sm:gap-3.5 group flex-shrink-0 min-w-0" href="#">
                 <img alt="Calma : Breath Coach Logo" width="48" height="48" class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover shadow-sm border border-surface-container-high/90 flex-shrink-0 transition-transform group-hover:scale-105" src="playstore-app-icon-vibrant-curved.webp" />
@@ -382,16 +382,52 @@
                 </span>
             </a>
 
-            <!-- Center Navigation Links (How It Works, App Gallery, Reviews) -->
+            <!-- Center Navigation Links (Breathing Shapes, Reviews, Guides) -->
             <nav class="hidden md:flex items-center gap-6 lg:gap-8 mx-auto">
-                <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#how-it-works">How It Works</a>
                 <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#breathing-shapes">Breathing Shapes</a>
-                <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#gallery">App Gallery</a>
                 <a class="font-body-md text-[14px] sm:text-[15px] text-on-surface-variant hover:text-primary transition-colors font-medium" href="#reviews">Reviews</a>
+
+                <!-- Guides dropdown (desktop) -->
+                <div class="relative group">
+                    <button type="button" data-guides-btn aria-expanded="false" aria-haspopup="true" aria-controls="guides-panel-desktop" class="inline-flex items-center gap-1 font-body-md text-[14px] sm:text-[15px] text-on-surface-variant group-hover:text-primary hover:text-primary transition-colors font-medium">
+                        Guides
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div id="guides-panel-desktop" data-guides-panel class="hidden group-hover:block group-focus-within:block absolute left-1/2 -translate-x-1/2 top-full pt-4 z-50">
+                        <div class="w-[22rem] rounded-2xl bg-white border border-surface-container-high/70 shadow-[0_18px_50px_rgb(12,40,64,0.14)] p-2">
+                            <a class="block rounded-xl px-4 py-3 hover:bg-surface-container-lowest transition-colors" href="panic-relief/">
+                                <span class="block text-[15px] font-semibold text-on-surface">Panic relief breathing</span>
+                                <span class="block text-[13px] text-on-surface-variant">Steps, evidence and when to get help</span>
+                            </a>
+                            <a class="block rounded-xl px-4 py-3 hover:bg-surface-container-lowest transition-colors" href="box-breathing/">
+                                <span class="block text-[15px] font-semibold text-on-surface">Box breathing</span>
+                                <span class="block text-[13px] text-on-surface-variant">The four-count pattern with a guided animation</span>
+                            </a>
+                            <a class="block rounded-xl px-4 py-3 hover:bg-surface-container-lowest transition-colors" href="4-7-8-breathing/">
+                                <span class="block text-[15px] font-semibold text-on-surface">4-7-8 breathing</span>
+                                <span class="block text-[13px] text-on-surface-variant">How it works and what the evidence says</span>
+                            </a>
+                            <a class="block rounded-xl px-4 py-3 hover:bg-surface-container-lowest transition-colors" href="breathing-for-sleep/">
+                                <span class="block text-[15px] font-semibold text-on-surface">Breathing for sleep</span>
+                                <span class="block text-[13px] text-on-surface-variant">Techniques to wind down at night</span>
+                            </a>
+                            <a class="block rounded-xl px-4 py-3 hover:bg-surface-container-lowest transition-colors" href="visual-breathing/">
+                                <span class="block text-[15px] font-semibold text-on-surface">Visual breathing</span>
+                                <span class="block text-[13px] text-on-surface-variant">Follow a moving shape instead of counting</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </nav>
 
             <!-- Right App Actions: Mobile CTA & Desktop App Store/Google Play Badges -->
             <div class="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+                <!-- Guides button (mobile) -->
+                <button type="button" data-guides-btn aria-expanded="false" aria-haspopup="true" aria-controls="guides-panel-mobile" class="md:hidden inline-flex items-center gap-1 px-2.5 py-1.5 text-[13px] font-semibold text-on-surface-variant hover:text-primary transition-colors">
+                    Guides
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+
                 <!-- Mobile Compact CTA Button -->
                 <a class="sm:hidden inline-flex items-center justify-center px-3.5 py-1.5 rounded-full bg-primary text-white text-[12px] font-semibold tracking-wide shadow-sm hover:bg-blue-700 active:scale-95 transition-all gap-1 flex-shrink-0" href="#download">
                     <span>Get App</span>
@@ -407,6 +443,30 @@
                         <img alt="Get it on Google Play" width="105" height="32" class="h-8 sm:h-9 w-auto" src="assets/brand/google-play-badge.svg" />
                     </a>
                 </div>
+            </div>
+
+            <!-- Guides panel (mobile) -->
+            <div id="guides-panel-mobile" data-guides-panel class="hidden md:hidden absolute inset-x-0 top-full mt-2 rounded-3xl bg-white border border-surface-container-high/70 shadow-[0_18px_50px_rgb(12,40,64,0.14)] p-2">
+                <a class="block rounded-2xl px-4 py-3 active:bg-surface-container-lowest" href="panic-relief/">
+                    <span class="block text-[15px] font-semibold text-on-surface">Panic relief breathing</span>
+                    <span class="block text-[13px] text-on-surface-variant">Steps, evidence and when to get help</span>
+                </a>
+                <a class="block rounded-2xl px-4 py-3 active:bg-surface-container-lowest" href="box-breathing/">
+                    <span class="block text-[15px] font-semibold text-on-surface">Box breathing</span>
+                    <span class="block text-[13px] text-on-surface-variant">The four-count pattern with a guided animation</span>
+                </a>
+                <a class="block rounded-2xl px-4 py-3 active:bg-surface-container-lowest" href="4-7-8-breathing/">
+                    <span class="block text-[15px] font-semibold text-on-surface">4-7-8 breathing</span>
+                    <span class="block text-[13px] text-on-surface-variant">How it works and what the evidence says</span>
+                </a>
+                <a class="block rounded-2xl px-4 py-3 active:bg-surface-container-lowest" href="breathing-for-sleep/">
+                    <span class="block text-[15px] font-semibold text-on-surface">Breathing for sleep</span>
+                    <span class="block text-[13px] text-on-surface-variant">Techniques to wind down at night</span>
+                </a>
+                <a class="block rounded-2xl px-4 py-3 active:bg-surface-container-lowest" href="visual-breathing/">
+                    <span class="block text-[15px] font-semibold text-on-surface">Visual breathing</span>
+                    <span class="block text-[13px] text-on-surface-variant">Follow a moving shape instead of counting</span>
+                </a>
             </div>
         </div>
     </header>
@@ -1810,9 +1870,9 @@
     <div class="bg-[#38a6fd]">
     <footer class="w-full bg-gradient-to-b from-[#0a3a8f] to-[#061f55] text-white rounded-t-[2rem] sm:rounded-t-[3rem] pt-10 sm:pt-16 pb-6 sm:pb-8" id="download">
         <div class="max-w-[72rem] mx-auto px-container-mobile-padding sm:px-container-tablet-padding lg:px-space-xl">
-            <div class="grid grid-cols-2 gap-x-6 gap-y-9 md:gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+            <div class="grid grid-cols-2 gap-x-6 gap-y-9 md:gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] lg:grid-cols-[1.7fr_0.9fr_1.1fr_1.5fr]">
                 <!-- Brand + Download -->
-                <div class="col-span-2 md:col-span-1 flex flex-col items-start">
+                <div class="col-span-2 md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left">
                     <a class="flex items-center gap-3 mb-4" href="#">
                         <img alt="Calma : Breath Coach Logo" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/25" src="playstore-app-icon-vibrant-curved.webp" />
                         <span class="font-headline-sm text-[20px] font-bold tracking-tight">Calma : Breath Coach</span>
@@ -1820,12 +1880,12 @@
                     <p class="text-[15px] leading-relaxed text-blue-100/90 max-w-sm mb-6">
                         Guided breathing exercises to calm anxiety, improve focus, and help you sleep.
                     </p>
-                    <div class="flex flex-wrap items-center gap-3">
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                         <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://apps.apple.com/app/apple-store/id6762740971?pt=128729718&amp;ct=web-footer&amp;mt=8" rel="noopener noreferrer" target="_blank">
-                            <img alt="Download on the App Store" width="135" height="44" class="h-11 w-auto" src="assets/brand/app-store-badge.svg" />
+                            <img alt="Download on the App Store" width="135" height="44" class="h-10 w-auto" src="assets/brand/app-store-badge.svg" />
                         </a>
                         <a class="hover:opacity-90 transition-opacity rounded-lg ring-1 ring-white/25" href="https://play.google.com/store/apps/details?id=com.frosbytearena.calma&amp;hl=en_IN&amp;pli=1&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_campaign%3Dweb-footer" rel="noopener noreferrer" target="_blank">
-                            <img alt="Get it on Google Play" width="135" height="44" class="h-11 w-auto" src="assets/brand/google-play-badge.svg" />
+                            <img alt="Get it on Google Play" width="135" height="44" class="h-10 w-auto" src="assets/brand/google-play-badge.svg" />
                         </a>
                     </div>
                 </div>
@@ -1841,10 +1901,22 @@
                     </ul>
                 </nav>
 
+                <!-- Guides -->
+                <nav aria-label="Breathing guides">
+                    <h3 class="text-[12px] font-semibold uppercase tracking-[0.14em] text-blue-200/80 mb-5">Guides</h3>
+                    <ul class="space-y-3 text-[15px]">
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="panic-relief/">Panic Relief Breathing</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="box-breathing/">Box Breathing</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="4-7-8-breathing/">4-7-8 Breathing</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="breathing-for-sleep/">Breathing for Sleep</a></li>
+                        <li><a class="text-blue-100 hover:text-white transition-colors" href="visual-breathing/">Visual Breathing</a></li>
+                    </ul>
+                </nav>
+
                 <!-- Follow -->
-                <div>
+                <div class="col-span-2 md:col-span-1 text-center md:text-left">
                     <h3 class="text-[12px] font-semibold uppercase tracking-[0.14em] text-blue-200/80 mb-5">Follow</h3>
-                    <ul class="grid grid-cols-3 gap-3 md:grid-cols-2 md:gap-x-6 md:gap-y-3">
+                    <ul class="flex flex-wrap justify-center gap-3 md:grid md:justify-start md:grid-cols-1 md:gap-y-3 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-3 lg:gap-x-4">
                         <li>
                             <a href="https://www.instagram.com/calmabreathe/" target="_blank" rel="noopener noreferrer" aria-label="Follow Calma on Instagram" class="group inline-flex items-center gap-3 text-blue-100 hover:text-white transition-colors">
                                 <span class="w-9 h-9 rounded-xl bg-white/10 group-hover:bg-white/20 ring-1 ring-white/15 flex items-center justify-center transition-colors">
@@ -2120,6 +2192,32 @@
                 window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
             });
             update();
+        })();
+    </script>
+    <script>
+        (function () {
+            var btns = document.querySelectorAll('[data-guides-btn]');
+            if (!btns.length) return;
+            function closeAll() {
+                btns.forEach(function (b) {
+                    var p = document.getElementById(b.getAttribute('aria-controls'));
+                    if (p) p.classList.add('hidden');
+                    b.setAttribute('aria-expanded', 'false');
+                });
+            }
+            btns.forEach(function (b) {
+                var p = document.getElementById(b.getAttribute('aria-controls'));
+                b.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var wasHidden = p.classList.contains('hidden');
+                    closeAll();
+                    if (wasHidden) { p.classList.remove('hidden'); b.setAttribute('aria-expanded', 'true'); }
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('[data-guides-panel]')) closeAll();
+            });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
         })();
     </script>
 </body>
